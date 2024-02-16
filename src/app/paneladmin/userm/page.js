@@ -11,6 +11,7 @@ export default function Userm() {
 
       if (response.ok) {
         const responsedata = await response.json();
+        console.log(responsedata);
         Setdata(responsedata);
       } else {
         console.log('Response Not Okay!');

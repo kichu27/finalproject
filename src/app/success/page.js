@@ -1,10 +1,46 @@
-// pages/success.js
+"use client"
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from "@/app/success/page.module.css" // Import CSS module
 import Link from 'next/link'
 
+
+
+const editboughtcourses= async() =>{
+
+try {
+
+const response = await fetch('api/users/boughtcourses' , {
+
+method : "GET" , 
+
+}) 
+  
+} catch (error) {
+  console.log(error);
+}
+
+
+
+
+}
+
+
+
+
+
+
 const SuccessPage = () => {
+
+
+useEffect(()=>{
+
+editboughtcourses()
+
+
+}, [])
+
+
   return (
     <div className={styles.container}>
       <div className={styles.successMessage}>

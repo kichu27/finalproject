@@ -114,6 +114,7 @@ const response = await fetch('/api/users/atfav' ,
 
   }, []);
 
+  
  
   
   
@@ -164,9 +165,9 @@ window.alert("Course Successfully Liked")
 
         })}
       
-    </div>
+</div>
 
-    <div className={s.maindiv} >
+<div className={s.maindiv} >
    
    <div className={s.h}> 
    <h1>APP DEVELOPEMENT</h1> <hr/>
@@ -208,9 +209,9 @@ return <div className={s.cdiv} key={course._id}>
 
       })}
     
-  </div>
+</div>
 
-  <div className={s.maindiv} >
+<div className={s.maindiv} >
    
    <div className={s.h}> 
    <h1>DATA SCIENCE PYTHON</h1> <hr/>
@@ -251,9 +252,9 @@ return <div className={s.cdiv} key={course._id}>
 
       })}
     
-  </div>
+</div>
 
-  <div className={s.maindiv} >
+<div className={s.maindiv} >
    
    <div className={s.h}> 
    <h1>FULL STACK JAVA</h1> <hr/>
@@ -294,9 +295,9 @@ return <div className={s.cdiv} key={course._id}>
 
       })}
     
-  </div>
+</div>
 
-  <div className={s.maindiv} >
+<div className={s.maindiv} >
    
    <div className={s.h}> 
    <h1>FULL STACK WEB DEVELOPEMENT</h1> <hr/>
@@ -343,17 +344,9 @@ return <div className={s.cdiv} key={course._id}>
 
       })}
     
-  </div>
-
-
-
-
-
-
-
-
-
+</div>
 
     </div>
   );
 }
+

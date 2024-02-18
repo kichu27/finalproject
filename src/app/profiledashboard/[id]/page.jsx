@@ -1,10 +1,12 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-
+import s from "@/app/styles/s.module.css"
 export default function Profilepage({ params }) {
   const router = useRouter();
   const [responsedata, setResponsedata] = useState(null);
+  const [responsedata1, setResponsedata1] = useState([]);
+
 
   
   useEffect(() => {
@@ -20,7 +22,19 @@ export default function Profilepage({ params }) {
       }
     };
 
+    const fetchboughtcourses = async () => {
+      try {
+        const response = await fetch('/api/users/gbc', { method: 'GET' });
+        const data = await response.json();
+        const {dota} = data 
+        setResponsedata1(dota);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
     fetchData();
+    fetchboughtcourses()
   }, []);
 
   return (
@@ -93,6 +107,26 @@ export default function Profilepage({ params }) {
 
         </p>
       </div>
+      
+     
+      <div className={s.cdivv}>    
+       {responsedata1.map((course) =>{
+
+return <div className={s.ccdiv1}  key={course._id}>
+  
+  <div className={s.ccdiv} key={course._id}>
+
+
+
+<div className={s.ccn}>  <h4>{course.courseName}</h4></div>
+<div className={s.ccn}>  <h4>{course. instructor}</h4></div>
+
+</div> </div> 
+
+ })}
+
+ </div>
+
       
     </div>
   );

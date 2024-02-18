@@ -108,7 +108,7 @@ export default function Profilepage({ params }) {
         </p>
       </div>
       
-     
+     <h1>BOUGHT COURSES</h1>
       <div className={s.cdivv}>    
        {responsedata1.map((course) =>{
 

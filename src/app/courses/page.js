@@ -8,6 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import s from "@/app/styles/s.module.css"
 import Head from 'next/head';
+import { CldImage } from 'next-cloudinary';
 
 
 export default function CoursePage() {
@@ -314,6 +315,12 @@ return <div className={s.cdiv} key={course._id}>
           content="Explore popular courses, app development, data science, full-stack Java, and web development on Skillsail. Enhance your skills with high-quality courses."
         />
       </Head>
+
+    
+
+      <div>
+      <CldImage src={course.imageURL} width={250} height={250} alt="React Logo"/>
+      </div>
 
 <div className={s.cn}>  <h4>{course.courseName}</h4></div>
 

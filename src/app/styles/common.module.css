@@ -305,12 +305,13 @@ padding-top: 150px;
 
   .o1{
 
-
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 background-color: #e7e9e9;
 padding: 15px;
 margin-bottom: 10px;
-font-weight: 600;
+font-weight: 50;
 border-radius: 20px;
+letter-spacing: 2px;
 
   }
 

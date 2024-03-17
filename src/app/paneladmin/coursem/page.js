@@ -5,8 +5,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import { CldUploadButton } from 'next-cloudinary';
 export default function CourseManagement() {
-  const [message, setMessage] = useState('');
 
   const [formData, setFormData] = useState({
     courseName: '',
@@ -14,11 +14,38 @@ export default function CourseManagement() {
     startDate: '',
     endDate: '',
     description: '',
+    imageURL:"" , 
     subDescription: '',
     price:'' ,
     category: '',
      
   });
+
+  const handleSuccess = async (res) => {
+    try {
+      const { event, info } = res;
+    
+      const i = info.secure_url;
+      console.log(i);
+      // Use the callback function form of setFormData to ensure you're working with the most up-to-date state
+      setFormData(prevState => ({
+        ...prevState,
+        imageURL: i 
+      }));
+  
+      // Here, you might not see the updated state immediately after setFormData because it's asynchronous
+      console.log(formData);
+      console.log('course picture updated successfully');
+    
+    } catch (error) {
+      console.error('Error updating course picture:', error);
+    }
+  };
+  
+  
+  const [message, setMessage] = useState('');
+
+
 
   const [categoryOptions, setCategoryOptions] = useState([
     'DATA SCIENCE',
@@ -89,7 +116,9 @@ export default function CourseManagement() {
   const [categoryOptionsVisible, setCategoryOptionsVisible] = useState(false);
 
   const handleFormSubmit = async (event) => {
-  
+
+    
+    console.log("the form ",formData);
     event.preventDefault();
 
     try {
@@ -253,8 +282,15 @@ export default function CourseManagement() {
           </ul>
         )}
 
+ <CldUploadButton
+      uploadPreset="kartikp"
+      cloudName={process.env.CLOUDINARY_NAME}
+      onSuccess={handleSuccess}
+    />
+        
+
         {message && <div style={messageStyle}>{message}</div>}
-        <button type="submit" style={buttonStyle}>
+        <button type="submit" style={buttonStyle} >
           Register Course
         </button>
       </form>

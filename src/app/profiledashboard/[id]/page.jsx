@@ -3,6 +3,9 @@ export const dynamic = 'force-dynamic'
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import s from "@/app/styles/s.module.css"
+import { CldImage } from 'next-cloudinary';
+import Link from 'next/link'
+
 export default function Profilepage({ params }) {
   const router = useRouter();
   const [responsedata, setResponsedata] = useState(null);
@@ -72,6 +75,16 @@ export default function Profilepage({ params }) {
         >
           WELCOME, {responsedata?.username || 'User'}
         </h1>
+
+        <CldImage
+          src={responsedata?.profilepic_id || ''}
+          height={300}
+          width={300}
+          alt="Profile_Image"
+        />
+
+
+
         <p
           style={{
             fontWeight: 'bold',
@@ -103,10 +116,7 @@ export default function Profilepage({ params }) {
           Number: {responsedata?.number || 'N/A'}
         </p>
         
-        <p>
-
-
-        </p>
+        <Link href="/cloudinary"> Add Profile Picture</Link>
       </div>
       
      <h1>BOUGHT COURSES</h1>
@@ -122,7 +132,8 @@ return <div className={s.ccdiv1}  key={course._id}>
 <div className={s.ccn}>  <h4>{course.courseName}</h4></div>
 <div className={s.ccn}>  <h4>{course. instructor}</h4></div>
 
-</div> </div> 
+</div> 
+</div> 
 
  })}
 

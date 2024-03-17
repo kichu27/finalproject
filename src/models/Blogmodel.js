@@ -9,9 +9,16 @@ const BlogSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-    
-   
+
+  imgurl : {
+
+    type : String , 
+  } , 
  
-});
+   
+  
+ 
+},
+{timestamps : true} );
 
 export const Blog = mongoose.models.Blog || mongoose.model("Blog", BlogSchema);

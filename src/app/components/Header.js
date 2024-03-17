@@ -5,11 +5,15 @@ import Link from 'next/link';
 import Head from 'next/head';
 import styles from 'src/app/styles/nav.module.css';
 import { useRouter } from 'next/navigation';
+import { useAnimate, stagger, motion } from "framer-motion";
 
 export default function Header() {
 
   const router = useRouter()
   const [isadmin, setisadmin] = useState(false);
+  const [open, setOpen] = useState(false);
+const [scope, animate] = useAnimate();
+
 
   async function checkuser() {
     try {
@@ -90,6 +94,9 @@ export default function Header() {
                 <Link href="" onClick={handlelogout}>Logout</Link>
               </div>
             </li>
+
+    
+            
           )}
         </ul>
       </nav>

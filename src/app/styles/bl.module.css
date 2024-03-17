@@ -1,0 +1,123 @@
+.md {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #ffffff; /* Light gray background */
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 20px;
+  width: 40%;
+  margin-top: 80px; /* Add margin from top */
+  border-radius: 40px;
+  height: 300px;
+  position: relative; /* Position for shimmer overlay */
+}
+
+.md::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ffffff 0%, #f4f2f2 50%, #f3f0f0 100%);
+  background-size: 200% auto;
+  border-radius: 10px; /* Same as parent's border-radius */
+  animation: shimmer 1.5s infinite linear; /* Adjust timing as needed */
+}
+
+@keyframes shimmer {
+  0% {
+      background-position: -200% 0;
+  }
+  100% {
+      background-position: 200% 0;
+  }
+}
+.img,
+.md1,
+.md2,
+.o1,
+.md00,
+.md3 {
+  position: relative;
+}
+
+.img::before,
+.img::after,
+.md1::before,
+.md1::after,
+.md2::before,
+.md2::after,
+.o1::before,
+.o1::after,
+.md00::before,
+.md00::after,
+.md3::before,
+.md3::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #ffffff 0%, #d7d2d2 50%, #ffffff 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 20px; /* Adjust as needed */
+}
+
+.img::after,
+.md1::after,
+.md2::after,
+.o1::after,
+.md00::after,
+.md3::after {
+  animation-delay: 0.95s;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -135% 0%;
+  }
+}
+
+.img {
+  width: 40%;
+  padding: 100px;
+  border-radius: 20px;
+}
+
+.md1,
+.md2 {
+  border-radius: 35px;
+  padding: 10px; 
+  text-align: center; 
+  margin-bottom: 10px; 
+  text-align: center;
+}
+
+.o1 {
+  background-color: #e7e9e9;
+  padding: 25px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  border-radius: 20px;
+  width: 50px;
+}
+
+.md00 {
+  width: 82%;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.md3 {
+  margin-bottom: 5px;
+}
+
+
+  

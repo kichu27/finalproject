@@ -15,6 +15,7 @@ export async function POST(req) {
       startDate,
       endDate,
       description,
+      imageURL, 
       subDescription, // Add subDescription
       price ,
       category, // Add category
@@ -34,7 +35,7 @@ export async function POST(req) {
       startDate,
       endDate,
       description, 
-      imageURL: "D:/2023-10-31 bday akola/bday akola 002.JPG", 
+      imageURL, 
       subDescription ,
       price ,  
       category ,

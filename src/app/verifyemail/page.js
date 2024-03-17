@@ -65,6 +65,7 @@ export default function VerifyEmailPage() {
             </Link>
           </div>
         )}
+        
         {error && (
           <div style={styles.error}>
             <h2>Error</h2>

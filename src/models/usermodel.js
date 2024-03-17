@@ -58,7 +58,14 @@
             type: [mongoose.Schema.Types.ObjectId],  // Array of ObjectIds
             default: [],  // Default value is an empty array
           },
+          
+          profilepic_id : {
 
+            type : String ,
+            default : "" , 
+
+
+          }  ,
 
 
     })

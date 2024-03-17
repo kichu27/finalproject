@@ -36,7 +36,7 @@ export default function Profiledashboard() {
       </Head>
 
       <div>
-        {/* Your existing component content */}
+    
       </div>
     </>
   );

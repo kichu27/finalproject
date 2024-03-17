@@ -2,48 +2,95 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import styles from '@/app/styles/common.module.css';
+import { CldUploadButton } from 'next-cloudinary';
+import { CldImage } from 'next-cloudinary';
 
 export default function WriteablogPage() {
+
   const [message, setMessage] = useState('');
   const [dataresponse, setdataresponse] = useState([]);
   const [msg, setmsg] = useState('');
+  const [file , setfile] = useState(null) ; 
+  const [public_id, setPublicId] = useState("");
+
   const [formData, setFormData] = useState({
     title: '',
     content: '',
+    imgurl : '' , 
   });
 
-  const handleSubmit = async (event) => {
+  
+    
+    const handleSubmit = async (event) => {
     event.preventDefault();
 
     const apiUrl = '/api/admin/createblog';
+    
+   
+     
+        try { 
 
+          const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          });
+
+          const responseData = await response.json();
+          setmsg(responseData.msg);
+  
+          if (!response.ok) {
+            console.error('Error submitting data');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+        }
+
+  };
+  
+
+  const handleSuccess = async (res) => {
     try {
-      const response = await fetch(apiUrl, {
+      const { event, info } = res;
+      setPublicId(info.public_id);
+
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        imgurl: info.public_id
+      }));
+
+      const response = await fetch('/api/admin/addblogimg', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+        headers: {  
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          publicId: info.public_id , 
+        })
       });
-
-      const responsedata = await response.json();
-      console.log(responsedata.msg);
-      setmsg(responsedata.msg);
-
-      if (response.ok) {
-        setFormData({ title: '', content: '' });
-      } else {
-        console.error('Error submitting data');
+  
+      if (!response.ok) {
+        throw new Error('Failed to update blog picture');
       }
+  
+  
+      console.log('blog picture updated successfully');
+  
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error updating blog picture:', error);
+    
     }
   };
+  
 
+  
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    const { name, value} = event.target;
+      setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
+
 
   async function handledelete(item) {
     try {
@@ -74,12 +121,15 @@ export default function WriteablogPage() {
         method: 'GET',
       });
       const res = await response.json();
-      console.log(res.data);
+
       setdataresponse(res.data);
+      console.log(res.data);
     }
 
     getblogdata();
   }, []);
+
+
 
   return (
     <div className={styles.frm}>
@@ -107,6 +157,13 @@ export default function WriteablogPage() {
             placeholder="Enter Content"
             onChange={handleChange}
           />
+        
+      <CldUploadButton
+      uploadPreset="kartikp"
+      cloudName={process.env.CLOUDINARY_NAME}
+      onSuccess={handleSuccess}
+      /> 
+          
           <button className={styles.b} type="submit">
             Submit
           </button>
@@ -120,10 +177,23 @@ export default function WriteablogPage() {
         <h2>SKILLSAIL BLOGS</h2>
         {dataresponse.map((item) => (
           <div className={styles.md} key={item.id}>
+
+<div className={styles.md1}> 
+
+<CldImage
+          src={item.imgurl || ''}
+          height={300}
+          width={300}
+          alt="Profile_Image"
+        />
+
+</div>
             <div className={styles.md1}>
               <p>TITLE</p>
               {item.title}
             </div>
+
+
 
             <div className={styles.md2}>
               <p>CONTENT</p>
@@ -136,4 +206,3 @@ export default function WriteablogPage() {
     </div>
   );
 }
-

@@ -8,11 +8,15 @@ export async function POST(request)
 {
 
     try {
-        
+    
         await Connect() ; 
-        const {title , content}= await request.json();
-        
-        await  Blog.create({title ,content})
+ 
+        const {title , content , imgurl }= await request.json();
+
+console.log(imgurl , "url");
+
+
+        await  Blog.create({title ,content , imgurl })
         
         return NextResponse.json({msg :"Successfully Uploaded Blog !"})
         
@@ -23,6 +27,8 @@ export async function POST(request)
 
 
 }
+
+
 
 export async function GET()
 {

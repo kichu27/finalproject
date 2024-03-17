@@ -266,34 +266,25 @@ padding-top: 150px;
 
   .blogdiv {
     
-    border-radius: 30px;
-    background: rgb(200, 238, 190);
-    background: linear-gradient(
-      90deg,
-      rgba(200, 238, 190, 1) 0%,
-      rgba(177, 251, 255, 1) 50%,
-      rgba(212, 212, 255, 1) 100%
-    );
-    margin-top: 25px;
+    background-color: #fafafa;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
   }
   
   .md {
-    background: linear-gradient(
-        90deg,
-        rgba(200, 238, 190, 1) 0%,
-        rgba(255, 217, 173, 1) 50%,
-        rgba(212, 212, 255, 1) 100%
-      );
-
+   
 
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px;
-    background-color: #f5f5f5; /* Light gray background */
+    background-color: rgba(224, 219, 219, 0.545); /* Light gray background */
     border-radius: 10px; /* Rounded corners */
     margin-bottom: 20px;
     width: 40%;
@@ -303,14 +294,42 @@ padding-top: 150px;
   
   .md1,
   .md2 {
-    background-color: white; /* White background */
-    border-radius: 35px; /* Slightly rounded corners */
-    padding: 10px; /* Add some padding inside */
-    text-align: center; /* Center align text */
-    margin-bottom: 10px; /* Add spacing between md1 and md2 */
-    width: 80%;
-    text-align: justify;
-    
+   
+    border-radius: 35px;
+    padding: 10px; 
+    text-align: center; 
+    margin-bottom: 10px; 
+    text-align: center;
+
+  }
+
+  .o1{
+
+
+background-color: #e7e9e9;
+padding: 15px;
+margin-bottom: 10px;
+font-weight: 600;
+border-radius: 20px;
+
+  }
+
+  .md00{
+    width: 82%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: rgb(255, 255, 255);
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+text-align: justify ;
+  }
+
+  .md3{
+
+margin-bottom: 5px;
+
+
   }
 
 
@@ -334,4 +353,12 @@ padding-top: 150px;
   
   .lnk a:hover {
     background-color: #2980b9;
+  }
+
+  .madimioneregular {
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
+    margin-top: 50px;
   }

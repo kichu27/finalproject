@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 
 export default function UserHomepage() {
   return (
-    <>
+    <div>
       <Head>
         <title>SkillSail - Embark on a Learning Odyssey</title>
         <meta
@@ -24,6 +24,6 @@ export default function UserHomepage() {
         }
       />
       <Footer />
-    </>
+    </div>
   );
 }

@@ -43,7 +43,7 @@ export default function Page() {
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px', backgroundColor: '#f0f0f0', borderRadius: '10px' }}>
     <CldUploadButton
       uploadPreset="kartikp"
-      cloudName={process.env.CLOUDINARY_NAME}
+      cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
       onSuccess={handleSuccess}
     />
     <div style={{ marginTop: '20px' }}>

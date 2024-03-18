@@ -79,7 +79,7 @@ const FavCoursePage = ({ name }) => {
           <hr/>
           <p>Instructor: {course.instructor}</p>
 
-          <Image src={"/react.png"} width={50} height={50} alt="React Logo" />
+          
 
           <div className={s.del}>
             <Image src={'/t.png'} width={20} height={20} alt="Delete Icon" onClick={() => deleteFavCourse(course._id)} />

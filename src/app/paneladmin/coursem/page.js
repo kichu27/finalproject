@@ -27,14 +27,14 @@ export default function CourseManagement() {
     try {
       const { event, info } = res;
     
-      setPublicId(info.public_id);
+      console.log(info.secure_url);
+      setPublicId(info.secure_url);
 
       setFormData(prevState => ({
         ...prevState,
-        imageURL: public_id
+        imageURL: info.secure_url
       }));
-  
-      
+
       console.log(formData);
       console.log('course picture updated successfully');
     
@@ -43,7 +43,7 @@ export default function CourseManagement() {
     }
   };
   
-  
+
   const [message, setMessage] = useState('');
 
 

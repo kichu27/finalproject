@@ -1,18 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import Welcomeuser from '../components/Welcomeuser';
-import Link from 'next/link'
-import Image from 'next/image'
 import s from "@/app/styles/s.module.css"
-import Head from 'next/head';
-import { CldImage } from 'next-cloudinary';
-
+import CoursesDisplay from '../components/CoursesDisplay';
 
 export default function CoursePage() {
-
 
   const [name, setname] = useState("");
   const [array, setarray] = useState([]);
@@ -69,6 +62,7 @@ async function getcoursesdata(){
 
     const data = await response.json();
    const {d1 , d2 , d3 , d4} = data ; 
+   console.log("the d3 data is" , d3);
    setStateD1(d1)
    setStateD2(d2)
    setStateD3(d3)
@@ -84,29 +78,6 @@ async function getcoursesdata(){
 
 }
 
-
-
-async function addtofav(value)
-{
-
-const response = await fetch('/api/users/atfav' , 
-{
-  method: 'POST',
-  headers: {
-      'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({value}),
-});
-
-
-
-
-
-}
-
-
-
-
   useEffect(() => {
     checkuser();
     getcoursesdata(); 
@@ -120,240 +91,23 @@ const response = await fetch('/api/users/atfav' ,
   
   
   return (
-    <div className={s.mdiv}>
+<div className={s.mdiv}>
 
-<div className={s.head}> <Welcomeuser username={name} className={s.div}/></div>
-      
-
-<div className={s.maindiv} >
+<div className={s.head}> 
+<Welcomeuser username={name} className={s.div}/> 
+</div>
    
-     <div className={s.h}> 
-     <h1>POPULAR COURSES</h1> <hr/>
-     </div>
-    
-      
-    {array.map((course) =>{
+<CoursesDisplay Heading="POPULAR COURSES" State={array}    /> 
 
-return <div className={s.cdiv} key={course._id}>
+<CoursesDisplay Heading="APP DEVELOPEMENT" State={stateD3}    /> 
 
-<div className={s.cn}>  <h4>{course.courseName}</h4></div>
+<CoursesDisplay Heading="DATA SCIENCE PYTHON" State={stateD1}    /> 
 
-            <p>DURATION</p>
-            <p> {new Date(course.startDate).toLocaleDateString() } - {new Date(course.endDate).toLocaleDateString()} </p>
-            <p>{course.subDescription}</p>
-            <hr/>       
-      
-<Image src={"/react.png"} width={50} height={50} alt="React Logo" />
+<CoursesDisplay Heading="FULL STACK JAVA" State={stateD2}    /> 
 
-<div className={s.del}> 
-
-
-
-<Image src={'/heart.png'} width={20} height={20} alt="Delete Icon" onClick={() =>{ addtofav(course._id);
-window.alert("Course Successfully Liked")
-
-}
-
-} />
-
- 
- </div>
- <Link href={`/courses/${course._id}`}>
- <button className={s.button}>Read More </button>
- </Link>
- </div>
-
-
-        })}
-      
-</div>
-
-<div className={s.maindiv} >
-   
-   <div className={s.h}> 
-   <h1>APP DEVELOPEMENT</h1> <hr/>
-   </div>
- 
-    
-      {stateD3.map((course) =>{
-
-return <div className={s.cdiv} key={course._id}>
-
-<div className={s.cn}>  <h4>{course.courseName}</h4></div>
-
-          <p>DURATION</p>
-          <p> {new Date(course.startDate).toLocaleDateString() } - {new Date(course.endDate).toLocaleDateString()} </p>
-          <p>{course.subDescription}</p>
-          <hr/>
-         
-<Image src={"/react.png"} width={50} height={50} alt="React Logo" />
-
-<div className={s.del}> 
-
-
-
-<Image src={'/heart.png'} width={20} height={20} alt="Delete Icon" onClick={() => addtofav(course._id)} />
-
-
-
- 
- </div>
-
- <Link href={`/courses/${course._id}`}>
-                        <button className={s.button}>
-                            Read More
-                        </button>
-                    </Link>
-
-</div>
-
-
-      })}
+<CoursesDisplay Heading="FULL STACK WEB DEVELOPEMENT" State={stateD4}    /> 
     
 </div>
-
-<div className={s.maindiv} >
-   
-   <div className={s.h}> 
-   <h1>DATA SCIENCE PYTHON</h1> <hr/>
-   </div>
- 
-    
-      {stateD1.map((course) =>{
-
-return <div className={s.cdiv} key={course._id}>
-
-<div className={s.cn}>  <h4>{course.courseName}</h4></div>
-
-          <p>DURATION</p>
-          <p> {new Date(course.startDate).toLocaleDateString() } - {new Date(course.endDate).toLocaleDateString()} </p>
-          <p>{course.subDescription}</p>
-          <hr/>
-         
-    
-<Image src={"/react.png"} width={50} height={50} alt="React Logo" />
-
-<div className={s.del}> 
-
-
-
-<Image src={'/heart.png'} width={20} height={20} alt="Delete Icon" onClick={() => addtofav(course._id)} />
-
- 
- </div>
-
- <Link href={`/courses/${course._id}`}>
-                        <button className={s.button}>
-                            Read More
-                        </button>
-                    </Link>
-
-</div>
-
-
-      })}
-    
-</div>
-
-<div className={s.maindiv} >
-   
-   <div className={s.h}> 
-   <h1>FULL STACK JAVA</h1> <hr/>
-   </div>
- 
-    
-      {stateD2.map((course) =>{
-
-return <div className={s.cdiv} key={course._id}>
-
-<div className={s.cn}>  <h4>{course.courseName}</h4></div>
-
-          <p>DURATION</p>
-          <p> {new Date(course.startDate).toLocaleDateString() } - {new Date(course.endDate).toLocaleDateString()} </p>
-          <p>{course.subDescription}</p>
-          <hr/>
-       
-    
-<Image src={"/react.png"} width={50} height={50} alt="React Logo" />
-
-<div className={s.del}> 
-
-
-
-<Image src={'/heart.png'} width={20} height={20} alt="Delete Icon" onClick={() => addtofav(course._id)} />
-
- 
- </div>
-
- <Link href={`/courses/${course._id}`}>
-                        <button className={s.button}>
-                            Read More
-                        </button>
-                    </Link>
-
-</div>
-
-
-      })}
-    
-</div>
-
-<div className={s.maindiv} >
-   
-   <div className={s.h}> 
-   <h1>FULL STACK WEB DEVELOPEMENT</h1> <hr/>
-   </div>
- 
-    
-      {stateD4.map((course) =>{
-
-return <div className={s.cdiv} key={course._id}>
-  <Head>
-        <title>Skillsail - Online Courses Platform</title>
-        <meta
-          name="description"
-          content="Explore popular courses, app development, data science, full-stack Java, and web development on Skillsail. Enhance your skills with high-quality courses."
-        />
-      </Head>
-
-    
-
-      <div>
-      <CldImage src={course.imageURL} width={250} height={250} alt="React Logo"/>
-      </div>
-
-<div className={s.cn}>  <h4>{course.courseName}</h4></div>
-
-          <p>DURATION</p>
-          <p> {new Date(course.startDate).toLocaleDateString() } - {new Date(course.endDate).toLocaleDateString()} </p>
-          <p>{course.subDescription}</p>
-          <hr/>
-       
-<Image src={"/react.png"} width={50} height={50} alt="React Logo" />
-
-<div className={s.del}> 
-
-
-
-<Image src={'/heart.png'} width={20} height={20} alt="Delete Icon" onClick={() => addtofav(course._id)} />
-
- 
- </div>
-
- <Link href={`/courses/${course._id}`}>
-                        <button className={s.button}>
-                            Read More
-                        </button>
-                    </Link>
-
-</div>
-
-
-      })}
-    
-</div>
-
-    </div>
   );
 }
 

@@ -21,9 +21,6 @@ font-size: 20px;
 
 }
 
-
-
-/* Styles for main container */
 .maindiv {
   display: flex;
   flex-wrap: wrap;
@@ -33,44 +30,39 @@ font-size: 20px;
   margin-top: 50px;
 }
 
-/* Styles for header */
 .h {
   text-align: center;
   margin-bottom: 20px;
   margin-right: 1000px;
 }
 
-/* Heading styles */
 .h1 {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
+  
 }
 
-/* Separator line styles */
 .hr {
   width: 80%;
   margin-bottom: 20px;
   border: 1px solid #000;
 }
 
-/* Styles for link */
+
 .link {
   text-decoration: none;
 }
 
-/* Styles for delete icon */
 .del {
-  margin-top: 15px;
   margin-bottom: 10px;
   cursor: pointer;
 }
 
-/* Container styles for each course */
 .cdiv {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   padding: 20px;
   margin: 20px;
   width: 300px;
@@ -79,14 +71,19 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 text-align: center;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-/* Styles for course details */
+
 .cn {
   margin-bottom: 10px;
+  border-radius: 20px;
+margin-top: 5px;
+  background-color: rgb(226, 226, 226);
+  width: 200px;
 }
 
-/* Button styles */
+
 .button {
   padding: 10px 20px;
   font-size: 16px;
@@ -101,7 +98,7 @@ text-align: center;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-/* Hover effect for button */
+
 .button:hover {
   background-color: #3498db;
   color: #ffffff;
@@ -111,13 +108,6 @@ text-align: center;
 
 .ssdiv
 {
-
-
-
-
-
-
-
 
   display: flex;
   justify-content: center;

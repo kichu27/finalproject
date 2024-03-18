@@ -8,10 +8,9 @@ export async function GET() {
     await Connect();
 
     // Fetch courses from the database
-    const courses = await Course.find({});
+    const courses = await Course.find({}).limit(3);
     
 
-    // Convert the courses to a plain JavaScript array
     const coursesArray = courses.map(course => course.toJSON());
 
     // Return the response with the list of courses

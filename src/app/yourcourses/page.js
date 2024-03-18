@@ -148,7 +148,8 @@ router.push(redirect)
      </div>
 
 
-     <div className={s.cdivv}>     {favCourses.map((course) =>{
+     <div className={s.cdivv}>   
+       {favCourses.map((course) =>{
 
 return <div className={s.ccdiv1}  key={course._id}>
   

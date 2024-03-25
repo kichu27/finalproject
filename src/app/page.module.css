@@ -48,12 +48,19 @@ margin-right: 20px;
   background-size: 100%;
 height: 100vh;
 margin: 0px;
-  padding-top: 0px;
+
   }
 
   .body1{
 
 margin: 0px; 
+
+
+  }
+
+  .ht{
+    margin: 0px; 
+
 
 
   }

@@ -30,7 +30,7 @@ const {favoriteCourses} = data
 
    
       setbill(data.total)
-        setFavCourses(favoriteCourses); // Update state with favoriteCourses
+        setFavCourses(favoriteCourses);
       
       } else {
         console.error('Failed to fetch data');
@@ -68,7 +68,7 @@ const {favoriteCourses} = data
   }
   
 
-  const makepayment = async () => {
+const makepayment = async () => {
 
 const transactionid = "Tr-"+uuidv4().toString(36).slice(-6)
 
@@ -85,6 +85,7 @@ const payload = {
     type: "PAY_PAGE",
   },
 };
+
 
 
 

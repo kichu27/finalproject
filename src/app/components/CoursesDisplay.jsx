@@ -1,48 +1,30 @@
-
-'use client'
-
-import React from 'react'
-import Image from "next/image"
-import Link from "next/link"
-import { CldImage } from 'next-cloudinary';
-import s from "@/app/styles/s.module.css"
+import React, { Suspense } from 'react';
 import Courseinfo from './Courseinfo';
+import s from "@/app/styles/s.module.css";
+import CourseLoad from './CourseLoad';
+
 
 function CoursesDisplay(props) {
-
-      async function addtofav(value)
-{
-
-const response = await fetch('/api/users/atfav' , 
-{
-  method: 'POST',
-  headers: {
-      'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({value}),
-});
-
-
-
-
-
-}
-
-
   return (
-   <div className={s.maindiv} >
-   <div className={s.h}> 
-   <h1>{props.Heading}</h1> <hr/>
-   </div>
-       
-      {props.State.map((course) =>{
+    <div className={s.maindiv}>
+      <div className={s.h}>
+      <h1>{props.Heading}</h1> <hr />
+      </div>
 
-return <Courseinfo key={course._id} c ={course} /> 
+     <Suspense fallback={<CourseLoad /> }>  
+      
+     {props.State.map((course) => (
 
-})}
-                         
-</div>
-  )
+      <Courseinfo key={course._id} c={course} />
+
+       ))}
+      
+    </Suspense> 
+
+
+
+    </div>
+  );
 }
 
-export default CoursesDisplay
+export default CoursesDisplay;

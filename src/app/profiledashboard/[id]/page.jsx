@@ -1,24 +1,24 @@
-'use client';
-export const dynamic = 'force-dynamic'
-import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+"use client";
+export const dynamic = "force-dynamic";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import styles from "@/app/styles/profiledash.module.css"
+import { CldImage } from "next-cloudinary";
 import s from "@/app/styles/s.module.css"
-import { CldImage } from 'next-cloudinary';
-import Link from 'next/link'
+import Link from "next/link";
+import Image from "next/image"
 
 export default function Profilepage({ params }) {
   const router = useRouter();
   const [responsedata, setResponsedata] = useState(null);
   const [responsedata1, setResponsedata1] = useState([]);
 
-
-  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/users/me', { method: 'GET' });
+        const response = await fetch("/api/users/me", { method: "GET" });
         const data = await response.json();
-        const {user} = data 
+        const { user } = data;
 
         setResponsedata(user);
       } catch (error) {
@@ -28,9 +28,9 @@ export default function Profilepage({ params }) {
 
     const fetchboughtcourses = async () => {
       try {
-        const response = await fetch('/api/users/gbc', { method: 'GET' });
+        const response = await fetch("/api/users/gbc", { method: "GET" });
         const data = await response.json();
-        const {dota} = data 
+        const { dota } = data;
         setResponsedata1(dota);
       } catch (error) {
         console.error(error);
@@ -38,113 +38,96 @@ export default function Profilepage({ params }) {
     };
 
     fetchData();
-    fetchboughtcourses()
+    fetchboughtcourses();
   }, []);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '100vh',
-        background: '#41b883', // MongoDB Atlas green
-        fontFamily: 'Roboto, sans-serif',
-        color: '#fff',
-      }}
-    >
-      <div
-        style={{
-          textAlign: 'center',
-          width: '60%',
-          padding: '30px',
-          borderRadius: '12px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-          background: '#ffffff', // MongoDB Atlas white
-          marginBottom: '20px',
-        }}
-      >
-        <h1
-          style={{
-            marginBottom: '20px',
-            fontSize: '32px',
-            fontWeight: 'bold',
-            color: '#41b883', // MongoDB Atlas green
-          }}
-        >
-          WELCOME, {responsedata?.username || 'User'}
-        </h1>
+    <div className={styles.maindiv} >
+      <div className={styles.subdiv1}>
 
-        <CldImage
-          src={responsedata?.profilepic_id || ''}
-          height={300}
-          width={300}
-          alt="Profile_Image"
-        />
+        <div className={styles.imgdiv}>
+
+          {responsedata && responsedata.profilepic_id ? (<CldImage
+            src={responsedata?.profilepic_id}
+            height={370}
+            width={300}
+            alt="Profile_Image"
+          />) : (<img
+            src="/pp.jpg"
+            height={370}
+            width={300}
+            alt="Profile_Image"
+            className={styles.pp}
+          />)}
 
 
+        </div>
 
-        <p
-          style={{
-            fontWeight: 'bold',
-            marginBottom: '10px',
-            fontSize: '20px',
-            color: '#41b883',
-          }}
-        >
-          ID: {responsedata?._id || 'N/A'}
-        </p>
-        <p
-          style={{
-            fontWeight: 'bold',
-            marginBottom: '10px',
-            fontSize: '20px',
-            color: '#41b883',
-          }}
-        >
-          Email: {responsedata?.email || 'N/A'}
-        </p>
-        <p
-          style={{
-            fontWeight: 'bold',
-            marginBottom: '10px',
-            fontSize: '20px',
-            color: '#41b883',
-          }}
-        >
-          Number: {responsedata?.number || 'N/A'}
-        </p>
-        
-        <Link href="/cloudinary"> Add Profile Picture</Link>
+        <div className={styles.tableContainer}>
+          <table className={styles.table}>
+            <tbody>
+              <tr>
+                <td>ID:</td>
+                <td>{responsedata?._id || "N/A"}</td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td>{responsedata?.email || "N/A"}</td>
+              </tr>
+              <tr>
+                <td>Number:</td>
+                <td>{responsedata?.number || "N/A"}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className={styles.linkdiv}>
+          <Link className={styles.link} href="/cloudinary">
+            {responsedata?.profilepic_id ? "UPDATE PROFILE PIC" : "ADD PROFILE PIC"}
+          </Link>
+        </div>
+
+
+
       </div>
-      
-     <h1>BOUGHT COURSES</h1>
-      <div className={s.cdivv}>    
-       {responsedata1.map((course) =>{
 
-return <div className={s.ccdiv1}  key={course._id}>
-  
-  <div className={s.ccdiv} key={course._id}>
+      <div className={styles.subdiv2}>
+
+        <div className={styles.heading}>
+          <p>BOUGHT COURSES</p>
+        </div>
 
 
 
-<div className={s.ccn}>  <h4>{course.courseName}</h4></div>
-<div className={s.ccn}>  <h4>{course. instructor}</h4></div>
+        <div className={styles.subdiv3}>
 
-</div> 
-</div> 
+          {responsedata1.map((c) => {
+            return (
+              <div className={s.cdiv} key={c._id}>
 
- })}
+                <div>
+                  <CldImage src={c.imageURL} width={320} height={250} alt="Course Image " />
+                </div>
+                  
+                <div className={s.cn}>  <h4>{c.courseName}</h4></div>
 
- </div>
 
-      
+                <p>{c.subDescription}</p>
+                <hr />
+                <p>--- Istructor ---</p>
+                <p> {c.instructor} </p>
+
+              </div>
+
+            );
+          })}
+
+        </div>
+
+      </div>
+
+
     </div>
   );
-  
-  
-  
-  
-  
 }

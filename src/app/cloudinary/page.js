@@ -2,10 +2,13 @@
 import { CldUploadButton } from 'next-cloudinary';
 import { CldImage } from 'next-cloudinary';
 import { useState } from 'react';
-import link from 'next/link'
+import { useRouter } from 'next/navigation';
+import styles from "@/app/styles/profiledash.module.css"
+
 
 export default function Page() {
   const [public_id, setPublicId] = useState("");
+const Router = useRouter()
 
   const handleSuccess = async (res) => {
     try {
@@ -27,10 +30,8 @@ export default function Page() {
       if (!response.ok) {
         throw new Error('Failed to update profile picture');
       }
-  
-  
-      console.log('Profile picture updated successfully');
-  
+      Router.push("/profiledashboard")
+
     } catch (error) {
       console.error('Error updating profile picture:', error);
     
@@ -40,21 +41,24 @@ export default function Page() {
 
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px', backgroundColor: '#f0f0f0', borderRadius: '10px' }}>
+    <div className={styles.css}>
+     
+
+    
     <CldUploadButton
-      uploadPreset="kartikp"
-      cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+      uploadPreset="kartikp" 
+      cloudName={process.env.CLOUDINARY_NAME}
       onSuccess={handleSuccess}
-    />
+      className={styles.uploadButton} // Apply CSS class
+    >
+      Upload
+    </CldUploadButton>
+
     <div style={{ marginTop: '20px' }}>
-      <CldImage
-        src={public_id}
-        height={500}
-        width={500}
-     alt='Profile Image'
-      />
+
+    
     </div>
-    <a href="/profiledashboard" style={{ marginTop: '20px', textDecoration: 'none', color: '#007bff' }}>Go to Profile Dashboard</a>
+
   </div>
 
   

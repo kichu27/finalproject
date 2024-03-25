@@ -3,11 +3,14 @@
   display: flex;
   justify-content: center; /* Center align items horizontally */
   padding: 30px 0px; /* Add some vertical padding for spacing */
-  border-radius: 10px;
+ 
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   letter-spacing: 1px;
-
+position:static;
+width: 100%;
+margin: 0px;
+height: 60px;
 }
 
 .navList {
@@ -30,6 +33,20 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 .nav a:hover {
   color:  #CC6A4F;
+}
+
+.notidiv{
+ 
+  height: 18px;
+  width: 18px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  position: relative;
+ bottom: 14px;
+ right: 25px;
 }
 
 
@@ -98,8 +115,10 @@ text-align: center
 
 
 
+.bell:hover{
 
-
+  cursor:auto;
+}
 
 
 .navbut
@@ -110,6 +129,70 @@ padding: 15px;
   border:solid 2px #ffffff;
 border-radius: 20px;
 margin: 5px;
+
+
+}
+
+
+
+.notifidiv{
+
+height: 300px;
+width: 500px;
+position: absolute;
+background-color: #91dab7a7;
+color: #000000;
+top: 100px;
+right: 330px;
+border-radius: 8px;
+display: flex;
+flex-direction: column;
+overflow-y: auto;
+align-items: center;
+transition: ease-in 2s;
+}
+
+.sepdiv{
+padding: 25px;
+height: 28px;
+width: 400px;
+background-color: #ffffff;
+border: 1px soild black;
+margin-top: 7px;
+border-radius: 20px;
+display: flex;
+align-items: center;
+text-align: left;
+margin-left: 10px;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif  ;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+line-height: 23px;
+
+
+}
+
+.timediv{
+
+font-size: smaller;
+color: rgb(107, 107, 107);
+}
+
+
+.forumchat{
+
+border-radius: 30px;
+border: 1px solid black;
+width: 60px;
+display: grid;
+place-items: center;
+
+}
+
+.forumchat :hover {
+
+cursor: pointer;
 
 
 }

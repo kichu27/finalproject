@@ -19,6 +19,11 @@ export default function AdminPage() {
     router.push('/paneladmin/blogcreate');
   };
 
+  const handlenotificationManagementClick = () => {
+    router.push('/paneladmin/notification');
+  };
+
+
 
   return (
     <div className={pastyles.body}>
@@ -35,6 +40,10 @@ export default function AdminPage() {
 
         <div onClick={handleblogManagementClick} className={pastyles.div}>
           <h2>Blog Management</h2>
+        </div>
+
+        <div onClick={handlenotificationManagementClick} className={pastyles.div}>
+          <h2>Notification Management</h2>
         </div>
       </div>
     </div>

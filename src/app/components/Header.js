@@ -6,6 +6,7 @@ import Head from 'next/head';
 import styles from 'src/app/styles/nav.module.css';
 import { useRouter } from 'next/navigation';
 import { useAnimate, stagger, motion } from "framer-motion";
+import Image from "next/image"
 
 export default function Header() {
 
@@ -13,7 +14,9 @@ export default function Header() {
   const [isadmin, setisadmin] = useState(false);
   const [open, setOpen] = useState(false);
 const [scope, animate] = useAnimate();
-
+const [num , setnum] = useState(0)
+const [d  , setd] = useState(false)
+const [noti, setnotis] = useState([])
 
   async function checkuser() {
     try {
@@ -39,9 +42,28 @@ const [scope, animate] = useAnimate();
     }
   }
 
+  async function checkandgetnotifications() {
+    try {
+      const response = await fetch('/api/users/notiinfo', {
+        method: 'GET',
+      });
+
+      const resdata = await response.json()
+      const {number , notis} = resdata ;
+      setnum(number)
+      setnotis(notis)
+      console.log(notis);
+     
+    } catch (error) {
+      console.error('Error checking notification info :', error);
+    }
+  }
+
   useEffect(() => {
     checkuser();
+    checkandgetnotifications();
   }, []);
+
 
   const handlelogout = async () => {
     try {
@@ -66,7 +88,7 @@ const [scope, animate] = useAnimate();
   }, [isadmin]);
 
   return (
-    <>
+    <div>
       <Head>
         <meta name="description" content={`Explore ${isadmin ? 'admin panel' : 'online courses and blogs'} on Skillsail. Enhance your skills and knowledge with our high-quality courses.`} />
       </Head>
@@ -76,7 +98,7 @@ const [scope, animate] = useAnimate();
           {!isadmin && <li><Link  className={styles.navbut} href="/courses">COURSES</Link></li>}
           {!isadmin && <li><Link className={styles.navbut} href="/blog">BLOGS</Link></li>}
           {isadmin ? <li><Link href="/paneladmin">PANEL</Link></li> : null }
- 
+          
           {isadmin ? (
             <li className={styles.dropdown}>
               <button className={styles.dropbtn}>ADMIN</button>
@@ -98,8 +120,23 @@ const [scope, animate] = useAnimate();
     
             
           )}
-        </ul>
+
+          {!isadmin && <li> <Image onClick={()=>{setd(!d) }} className={styles.bell} src="/nb.png" alt='bell' width={35} height={35}/></li>}
+          <div  className={styles.notidiv}> <p>{num}</p></div>
+          {d === true ? (
+ <div className={styles.notifidiv}>
+ {noti.map((n) => (
+   <div className={styles.sepdiv} key={n._id}>
+     <div> {n.message}</div> <div className={styles.timediv}>{new Date(n.createdAt).toLocaleString()}</div>
+   </div>
+ ))}
+</div>
+) : null}
+
+<div className={styles.forumchat}>  <Image src="/group.png" alt='forum chat' height={43} width={43} />   </div>
+
+        </ul> 
       </nav>
-    </>
+    </div>
   );
 }

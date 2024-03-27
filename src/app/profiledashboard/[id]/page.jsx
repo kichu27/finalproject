@@ -59,8 +59,6 @@ export default function Profilepage({ params }) {
             alt="Profile_Image"
             className={styles.pp}
           />)}
-
-
         </div>
 
         <div className={styles.tableContainer}>
@@ -87,9 +85,6 @@ export default function Profilepage({ params }) {
             {responsedata?.profilepic_id ? "UPDATE PROFILE PIC" : "ADD PROFILE PIC"}
           </Link>
         </div>
-
-
-
       </div>
 
       <div className={styles.subdiv2}>
@@ -122,12 +117,8 @@ export default function Profilepage({ params }) {
 
             );
           })}
-
         </div>
-
       </div>
-
-
     </div>
   );
 }

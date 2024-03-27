@@ -1,0 +1,217 @@
+.subsection1{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    margin : 40px ;
+    font-size: 1.7em;
+        }
+
+
+        .ppimg{
+margin-top: 40px;
+height: 190px;
+width: 190px;
+border-radius: 100px;
+        }
+    
+     
+    
+    .eachdiv{
+    
+    
+    background-color: rgb(72, 79, 77);
+    margin: 40px;
+    border-radius: 20px;
+    width: 800px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 600px;
+    
+    }
+    
+    
+    
+
+    
+    .subsection3{
+    background-color: antiquewhite;
+    border-radius: 10px;
+    height: 110px;
+    width: 700px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35px;
+    padding: 20px;
+    
+    
+        }
+    
+        .subsection4{
+    
+    background-color: inherit;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-right: 30px;
+        }
+    
+    .maindiv{
+    background-color: rgb(32, 32, 32);
+    margin: 0%;
+    display: flex;
+    justify-content: center;
+    height: max-content;
+    }
+    
+    .emoji{
+
+margin-top: 20px;
+
+    }
+
+    .emoji:hover{
+
+    transition: ease-in-out 600ms;
+    scale: 1.4;
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 20px;
+    }
+    
+    .subsection5{
+    
+    
+    background-color: aliceblue;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 470px;
+    background-color: inherit;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 150px;
+font-size: 1.5em;
+    }
+
+    .sd2{
+
+        height: 400px;
+        width: 500px;
+        
+    }
+
+    .commentForm {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      .commentForm form {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .commentForm textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: vertical; /* Allow vertical resizing of the textarea */
+      }
+      
+      .commentForm button {
+        margin-top: 50px;
+        margin-left: 370px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: rgb(5, 92, 5);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100px;
+      }
+
+      .txt{
+
+color: aliceblue;
+
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-size: larger;  
+text-align: center;
+margin-top: 20px;
+}
+      
+     
+      
+.commentsection{
+
+
+background-color: rgb(102, 102, 102);
+height: max-content;
+width: 900px;
+border-radius: 40px;
+color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.commentbox{
+margin: 20px;
+border-radius: 20px; 
+background-color: aliceblue;
+width: 250px;
+padding: 20px;
+}
+
+
+.upper {
+
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.ppimg2{
+     
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  margin-right: 10px;
+ 
+          }
+          
+          
+          .dipper{
+
+
+            border-radius:30px ;
+background-color: #ccc;
+
+width: 190px;
+
+
+          }
+
+          .dipper p {
+
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-weight: 300;
+text-align:center;
+          }
+
+          .na{
+            padding: 10px;
+            border-radius: 10px;
+background-color: beige;
+width: 40px ;
+margin-left: 60px;
+          }

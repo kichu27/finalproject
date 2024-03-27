@@ -68,6 +68,13 @@
           }  ,
 
 
+          profile_link : {
+
+            type : String ,
+            default : "" , 
+
+
+          }  ,
     })
 
 

@@ -133,7 +133,7 @@ const [noti, setnotis] = useState([])
 </div>
 ) : null}
 
-<div className={styles.forumchat}>  <Image src="/group.png" alt='forum chat' height={43} width={43} />   </div>
+<div className={styles.forumchat}> <Link href="/community" > <Image src="/group.png" alt='forum chat' height={43} width={43} /></Link>     </div>
 
         </ul> 
       </nav>

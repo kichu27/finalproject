@@ -14,6 +14,7 @@ const Router = useRouter()
     try {
 
       const { event, info } = res;
+      console.log(res);
       setPublicId(info.public_id);
 
 
@@ -23,7 +24,7 @@ const Router = useRouter()
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          publicId: info.public_id
+          publicId: info.public_id , profilelink : info.url
         })
       });
   

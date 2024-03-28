@@ -83,9 +83,6 @@ setcommentdata(resdata)
 
   };
 
-setInterval(() => {
-  getcommentdata(i) ; 
-}, 4000);
 
   return (
     <div className={styles.maindiv}>

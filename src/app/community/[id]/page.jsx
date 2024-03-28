@@ -84,7 +84,7 @@ setcommentdata(resdata)
   };
 
 setInterval(() => {
-  getcommentdata() ; 
+  getcommentdata(i) ; 
 }, 4000);
 
   return (

@@ -16,7 +16,7 @@ export async function POST(request) {
       const userData = await getdatafromtoken();
   
       const user = await User.findById(userData);
-  
+      
       if (!user) {
         return NextResponse.json({ message: "No user found in issue posting!" });
       }
@@ -60,12 +60,4 @@ try {
 } catch (error) {
     return NextResponse.json({ Error: error });   
 }
-
-
-
-
-
-
-
-
   }

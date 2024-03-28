@@ -50,14 +50,14 @@ const [issuedata , setissuedata] = useState(null)
 async function getissues() {
 
     try {
-
         const res = await fetch("/api/users/createissue" , {
             method : "GET" , 
         })
 
         const {resdata} = await res.json()
-        console.log(resdata);
-        setissuedata(resdata)
+       
+        setissuedata(resdata);
+
     } catch (error) {
         console.log(error);
     }
@@ -100,6 +100,27 @@ router.push(`/community/${id}`)
 
 }
 
+async function bookmark(id)
+{
+
+  try {
+    const response = await fetch(`/api/users/issuebookmark`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body : JSON.stringify({data : id})
+    });
+    if (!response.ok) {
+      throw new Error('Failed to save issue');
+    }
+    getissues();
+  } catch (error) {
+    console.error('Error saving issue:', error);
+  }
+
+
+}
 
   useEffect(()=>{
 
@@ -154,9 +175,9 @@ router.push(`/community/${id}`)
 <div className={styles.subsection4} >
 
 
-<Image className={styles.emoji} onClick={()=>{likeissue(issue._id) ; getissues()  } }src="/love.png" width={30} height={30}alt='image'/>
+<Image   className={styles.emoji} onClick={()=>{likeissue(issue._id) ; getissues()  } }src="/love.png" width={30} height={30}alt='image'/>
 <Image   className={styles.emoji} onClick={()=>{fetchchat(issue._id)}} src="/bubble-chat.png" width={30} height={30}  alt='image'></Image>
-<Image  className={styles.emoji} src="/bookmark.png" width={30} height={30}  alt='image'></Image>
+<Image   className={styles.emoji} onClick={()=>{bookmark(issue._id)}} src="/bookmark.png" width={30} height={30}  alt='image'></Image>
 
 </div>
 <div className={styles.subsection5} >

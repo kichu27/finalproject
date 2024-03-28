@@ -32,6 +32,7 @@ const saveSchema = new mongoose.Schema({
     required: true
   }
 });
+
 const issueSchema = new mongoose.Schema({
   issueContent: {
     type: String,

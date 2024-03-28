@@ -83,6 +83,10 @@ setcommentdata(resdata)
 
   };
 
+setInterval(() => {
+  getcommentdata() ; 
+}, 4000);
+
   return (
     <div className={styles.maindiv}>
       <div className="sd2">

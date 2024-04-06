@@ -12,7 +12,7 @@ export async function POST(request) {
       await Connect();
   
       const { data  , id} = await request.json();
-  console.log(data , id );
+ 
       const userData = await getdatafromtoken();
   
 

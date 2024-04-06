@@ -1,6 +1,7 @@
 'use client'
 import UserCard from "@/app/components/UserCard";
 import { useEffect, useState } from "react";
+import styles from "@/app/paneladmin/userm/styles.module.css"
 
 export default function Userm() {
   const [data, Setdata] = useState();
@@ -11,7 +12,7 @@ export default function Userm() {
 
       if (response.ok) {
         const responsedata = await response.json();
-        console.log(responsedata);
+        
         Setdata(responsedata);
       } else {
         console.log('Response Not Okay!');
@@ -27,13 +28,17 @@ export default function Userm() {
 
   
   return (
-    <div>
-      <h1> User Management </h1>
-      <h4>Total Users : {data && data.length}</h4>
+    <div className={styles.maindiv}>
+      <div className={styles.div1}> <h1> USER MANAGEMENT </h1>
+      <h4>Total Users : {data && data.length}</h4> <br /></div>
+
+      <div className={styles.div2}> 
       {data &&
         data.map((user) => (
           <UserCard key={user._id} user={user} />
-        ))}
+        ))}</div>
+     
+     
     </div>
   );
 }

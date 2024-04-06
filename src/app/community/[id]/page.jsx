@@ -26,13 +26,14 @@ export default function Profilepage({ params }) {
 
     const { data } = await res.json();
     setData(data);
-    console.log(data);
+
   }
 
   useEffect(() => {
     fetchIssuePost(i);
     getcommentdata(i)
   }, [i]);
+
 
   const getcommentdata = async (i) => {
 
@@ -82,10 +83,6 @@ setcommentdata(resdata)
 
 
   };
-
-setInterval(() => {
-  getcommentdata() ; 
-}, 4000);
 
   return (
     <div className={styles.maindiv}>
@@ -149,7 +146,7 @@ setInterval(() => {
   
   
   {commentdata.map((cd)=>{
-console.log(cd);
+
 return <div className={styles.commentbox} key={cd._id}> 
 
 <div className={styles.upper}> 

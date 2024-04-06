@@ -26,8 +26,10 @@ export default function AdminPage() {
 
 
   return (
-    <div className={pastyles.body}>
-      <h1 className={pastyles.h1}>Welcome Admin!</h1>
+    <div className={pastyles.mainbody}>
+
+<div className={pastyles.body}>
+      <h1 className={pastyles.h1}>WELCOME ADMIN !</h1>
 
       <div className={pastyles.MaindivManagement}>
         <div onClick={handleUserManagementClick} className={pastyles.div}>
@@ -45,7 +47,8 @@ export default function AdminPage() {
         <div onClick={handlenotificationManagementClick} className={pastyles.div}>
           <h2>Notification Management</h2>
         </div>
-      </div>
+      </div></div>
+
     </div>
   );
 }

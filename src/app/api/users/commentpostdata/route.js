@@ -10,7 +10,7 @@ export async function POST(request) {
       const {id} = await request.json();
       
       const issue = await  Issue.findById(id).populate("comments.user")
-      console.log(issue);
+    
 
       const commentdata = await issue.comments
 

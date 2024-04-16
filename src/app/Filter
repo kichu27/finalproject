@@ -30,7 +30,7 @@ export default function Filter() {
       const selectedCategories = Object.entries(categories).filter(([key, value]) => value).map(([key]) => key);
       const selectedTeachers = Object.entries(teachers).filter(([key, value]) => value).map(([key]) => key);
 
-      const response = await fetch(`/api/courses?categories=${JSON.stringify(selectedCategories)}&teachers=${JSON.stringify(selectedTeachers)}&priceRange=${priceRange}`);
+      const response = await fetch(`/api/filtercourses?categories=${JSON.stringify(selectedCategories)}&teachers=${JSON.stringify(selectedTeachers)}&priceRange=${priceRange}`);
       if (!response.ok) {
         throw new Error("Failed to fetch courses");
       }

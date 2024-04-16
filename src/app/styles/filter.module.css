@@ -1,0 +1,37 @@
+.App {
+  font-family: sans-serif;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  gap: 20px;
+}
+
+.div1 {
+  background-color: rgb(205, 150, 150);
+  padding: 20px;
+}
+
+.div2 {
+  background-color: rgb(0, 76, 76);
+  padding: 20px;
+}
+
+.checkbox-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.checkbox-label input {
+  margin-right: 5px;
+}
+
+.price-range-label {
+  margin-top: 20px;
+}
+
+.price-range-input {
+  width: 100%;
+}
+
+.price-range-value {
+  margin-top: 10px;
+}

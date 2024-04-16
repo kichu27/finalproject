@@ -160,10 +160,12 @@ export default function Filter() {
         <div className="div2">
           <p>byee</p>
           <ul>
-            {courses.map(course => (
-              <li key={course.id}>{course.name}</li>
-            ))}
-          </ul>
+    {courses.map(course => (
+      <li key={course._id}>
+        <courseinfo c={course} />
+      </li>
+    ))}
+  </ul>
         </div>
       </div>
 

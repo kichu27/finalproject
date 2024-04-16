@@ -1,1 +1,151 @@
+import React from 'react';
+import Head from 'next/head';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
+export default function Filter() {
+  return (
+    <div>
+      <Head>
+        <title>SkillSail - Embark on a Learning Odyssey</title>
+        <meta
+          name="description"
+          content="Navigate your personal journey to success with SkillSail's compassionate guidance and expert courses."
+        />
+      </Head>
+
+      <Header />
+     import React, { useState } from "react";
+import "./styles.css";
+
+export default function App() {
+  const [categories, setCategories] = useState({
+    dataScience: false,
+    fullStackWebDev: false,
+    javaDev: false,
+    mobileAppDev: false
+  });
+  const [teachers, setTeachers] = useState({
+    kartik: false,
+    sakshi: false,
+    prajakta: false,
+    sharyu: false
+  });
+  const [priceRange, setPriceRange] = useState(0);
+
+  const handleCategoryChange = (category) => {
+    setCategories({
+      ...categories,
+      [category]: !categories[category]
+    });
+  };
+
+  const handleTeacherChange = (teacher) => {
+    setTeachers({
+      ...teachers,
+      [teacher]: !teachers[teacher]
+    });
+  };
+
+  const handlePriceRangeChange = (event) => {
+    setPriceRange(event.target.value);
+  };
+
+  return (
+    <div className="App">
+      <div className="div1">
+        <h2>Categories:</h2>
+        <label>
+          <input
+            type="checkbox"
+            checked={categories.dataScience}
+            onChange={() => handleCategoryChange("dataScience")}
+          />
+          Data Science
+        </label>
+        <br />
+        <label>
+          <input
+            type="checkbox"
+            checked={categories.fullStackWebDev}
+            onChange={() => handleCategoryChange("fullStackWebDev")}
+          />
+          Full Stack Web Dev
+        </label>
+        <br />
+        <label>
+          <input
+            type="checkbox"
+            checked={categories.javaDev}
+            onChange={() => handleCategoryChange("javaDev")}
+          />
+          Java Dev
+        </label>
+        <br />
+        <label>
+          <input
+            type="checkbox"
+            checked={categories.mobileAppDev}
+            onChange={() => handleCategoryChange("mobileAppDev")}
+          />
+          Mobile App Dev
+        </label>
+        <br />
+        <h2>Teachers:</h2>
+        <label>
+          <input
+            type="checkbox"
+            checked={teachers.kartik}
+            onChange={() => handleTeacherChange("kartik")}
+          />
+          Kartik
+        </label>
+        <br />
+        <label>
+          <input
+            type="checkbox"
+            checked={teachers.sakshi}
+            onChange={() => handleTeacherChange("sakshi")}
+          />
+          Sakshi
+        </label>
+        <br />
+        <label>
+          <input
+            type="checkbox"
+            checked={teachers.prajakta}
+            onChange={() => handleTeacherChange("prajakta")}
+          />
+          Prajakta
+        </label>
+        <br />
+        <label>
+          <input
+            type="checkbox"
+            checked={teachers.sharyu}
+            onChange={() => handleTeacherChange("sharyu")}
+          />
+          Sharyu
+        </label>
+        <br />
+        <h2>Price Range:</h2>
+        <input
+          type="range"
+          min="0"
+          max="1000"
+          value={priceRange}
+          onChange={handlePriceRangeChange}
+        />
+        <p>Current Price Range: ${priceRange}</p>
+      </div>
+      <div className="div2">
+        <p>byee</p>
+      </div>
+    </div>
+  );
+}
+
+      <Footer />
+    </div>
+  );
+}

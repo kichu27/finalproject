@@ -96,6 +96,7 @@ const [noti, setnotis] = useState([])
       <nav className={styles.nav}>
         <ul className={styles.navList}>
           {!isadmin && <li><Link  className={styles.navbut} href="/courses">COURSES</Link></li>}
+  {!isadmin && <li><Link  className={styles.navbut} href="/FILTERPAGE">FILTER</Link></li>}
           {!isadmin && <li><Link className={styles.navbut} href="/blog">BLOGS</Link></li>}
           {isadmin ? <li><Link href="/paneladmin">PANEL</Link></li> : null }
           

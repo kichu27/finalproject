@@ -9,12 +9,12 @@ export async function GET(request) {
     const url = await request.url;
     const urlParams = new URLSearchParams(url.split("?")[1]);
     
-    // Get categories, teachers, and priceRange from URL params
+    
     const categories = JSON.parse(urlParams.get("categories"));
     const teachers = JSON.parse(urlParams.get("teachers"));
     const priceRange = parseInt(urlParams.get("priceRange"));
     
-    // Prepare filter object
+ 
     const filter = {};
     if (categories && categories.length > 0) {
       filter.category = { $in: categories };
@@ -26,10 +26,11 @@ export async function GET(request) {
       filter.price = { $lte: priceRange };
     }
 
-    // Fetch courses based on the filter
+   
     const data = await Course.find(filter);
+  
 
-    return NextResponse.json({ data });
+    return NextResponse.json({ resdata : data });
   } catch (error) {
     return NextResponse.json({ msg: "NOPE", error });
   }

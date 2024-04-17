@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import Connect from "@/lib/dbconn";
 import { Course } from "@/models/CourseModel";
 import { NextResponse } from "next/server";
@@ -32,7 +34,7 @@ export async function GET(request) {
 
     return NextResponse.json({ resdata : data });
   } catch (error) {
-    return NextResponse.json({ msg: "NOPE", error });
+    return NextResponse.json({ msgfromfiltercourse: "NOPE", error });
   }
 }
 

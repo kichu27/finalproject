@@ -122,7 +122,7 @@ export default function FILTERPAGE() {
           <p className={styles.priceRangeValue}>Current Price Range: ${priceRange}</p>
         </div>
         <div className={styles.div2}>
-          <div className={styles.div4}> <p>{courses.length} Courses Found</p> </div>
+          {/* <div className={styles.div4}> <p>{courses.length} Courses Found</p> </div> */}
           <div className={styles.div3}>
             { courses && courses.map(course => (
               <div key={course._id}>

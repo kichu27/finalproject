@@ -151,7 +151,7 @@ export default function FILTERPAGE() {
           <input
             type="range"
             min="0"
-            max="1000"
+            max="5000"
             value={priceRange}
             onChange={handlePriceRangeChange}
           />

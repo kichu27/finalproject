@@ -5,7 +5,7 @@ import Link from "next/link"
 import s from "@/app/styles/s.module.css"
 
 
-function courseinfo(props) {
+function Courseinfo(props) {
 
   async function addtofav(value) {
 
@@ -50,4 +50,4 @@ function courseinfo(props) {
   )
 }
 
-export default courseinfo
+export default Courseinfo

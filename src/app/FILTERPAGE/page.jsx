@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styles from "@/app/styles/filter.module.css";
-import CourseInfo from "../components/CourseInfo"; // Assuming CourseInfo is exported as default from CourseInfo.jsx
+import Courseinfo from "../components/Courseinfo";
 
 export default function FILTERPAGE() {
   const [categories, setCategories] = useState({
@@ -126,7 +126,7 @@ export default function FILTERPAGE() {
           <div className={styles.div3}>
             { courses && courses.map(course => (
               <div key={course._id}>
-                <CourseInfo c={course} />
+                <Courseinfo c={course} />
               </div>
             ))}
           </div>

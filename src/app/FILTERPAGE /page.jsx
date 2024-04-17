@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import "./styles.css";
 
-export default function Filterpage() {
+export default function FILTERPAGE() {
   const [categories, setCategories] = useState({
     dataScience: false,
     fullStackWebDev: false,

@@ -1,5 +1,5 @@
 .nav {
-  background-color: #defbff; /* Background color */
+  background-color: inherit; /* Background color */
   display: flex;
   justify-content: center; /* Center align items horizontally */
   padding: 30px 0px; /* Add some vertical padding for spacing */
@@ -11,6 +11,8 @@ position:static;
 width: 100%;
 margin: 0px;
 height: 60px;
+border-radius: 50px;
+
 }
 
 .navList {
@@ -127,12 +129,18 @@ text-align: center
 padding: 15px;
   background-color: inherit;
   border:solid 2px #ffffff;
-border-radius: 20px;
+border-radius: 0px;
 margin: 5px;
+border:  solid 2px black;
+transition: all 0.4s ease-in-out;
+}
+
+.navbut:hover{
+
+  border-radius: 30px;
 
 
 }
-
 
 
 .notifidiv{

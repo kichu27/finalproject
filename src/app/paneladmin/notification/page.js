@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
+import style from "@/app/styles/courseManagement.module.css"
 
 function Page() {
   const [noti, setNoti] = useState('');
@@ -32,10 +33,10 @@ function Page() {
   };
 
   return (
-    <div>
+    <div className={style.md1}>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {message && <p style={{ color: 'green' }}>{message}</p>}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={style.md3} >
         <input
           type='text'
           required={true}
@@ -44,7 +45,7 @@ function Page() {
           value={noti}
           onChange={(e) => setNoti(e.target.value)}
         />
-        <button type='submit'>SUBMIT</button>
+        <button className={style.but1}type='submit'>SUBMIT</button>
       </form>
     </div>
   );

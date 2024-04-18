@@ -130,6 +130,8 @@ async function bookmark(id)
   return (
     <div className={styles.maindiv}>
 
+<div className={styles.imgdiv}> < Image src="/SKILLSAILCOMMUNITY.jpg" height={700} width={1400} alt='imgskillsail'className={styles.imgdiv} /> </div>
+
 
         <div className={styles.sd1}>
           <div className={styles.head}>  <h1>POST AN ISSUE</h1> </div>

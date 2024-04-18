@@ -1,0 +1,116 @@
+/* courseManagement.module.css */
+
+.md{
+    width: 100%;
+    height: max-content;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    background: rgb(242,250,211);
+    background: radial-gradient(circle, rgb(233, 246, 181) 0%, rgba(238,238,238,1) 55%, rgba(255,245,245,1) 100%, rgba(56,177,178,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .form{
+padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(232,253,154);
+    background: linear-gradient(90deg, rgba(232,253,154,1) 0%, rgba(238,238,238,1) 78%, rgba(183,230,223,1) 100%);
+    border-radius: 70px;
+    text-align: center;
+  }
+
+  .form label {
+
+font-size: 1.3em;
+
+
+  }
+
+
+  .form input {
+
+       width: 300px;
+       border-radius: 20px;
+       font-size:x-large;
+       margin: 15px;
+       text-align: center;
+
+   }
+
+   .form textarea{
+
+    width: 300px;
+    border-radius: 20px;
+    font-size:x-large;
+    margin: 15px;
+
+
+   }
+
+   .but{
+    padding: 10px;
+    width: 200px;
+    border-radius: 30px;
+    margin-top: 30px;
+    background-color: #ffffff;
+    transition: all 1s ease-in-out;
+    text-decoration: none;
+   }
+
+   .but:hover{
+
+transform: scale(1.5);
+background-color: #d5fb99;
+
+
+   }
+   
+   .md1{
+width: 100%;
+height: 100vh;
+display: grid;
+place-items: center;
+background: linear-gradient(90deg, rgba(232,253,154,1) 0%, rgba(238,238,238,1) 78%, rgba(183,230,223,1) 100%);
+
+
+
+   }
+
+   .md3 input{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+color: black;
+height: 50px;
+width: 600px;
+border-radius: 30px;
+text-align: center  ;
+font-size: larger;
+border: 2px solid black;
+background-color: inherit;
+   }
+
+   .but1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+
+border-radius: 100px;
+margin-left: 20px;
+height: 60px;
+   }
+
+
+   .but1:hover{
+transition: all 1s ease;
+    transform: scale(0.7);
+    background-color: #ffffff;
+    
+    
+       }

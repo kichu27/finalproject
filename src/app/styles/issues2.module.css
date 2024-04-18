@@ -20,7 +20,7 @@ border-radius: 100px;
     .eachdiv{
     
     
-    background-color: rgb(72, 79, 77);
+    background-color: rgb(212, 249, 238);
     margin: 40px;
     border-radius: 20px;
     width: 800px;
@@ -58,7 +58,8 @@ border-radius: 100px;
         }
     
     .maindiv{
-    background-color: rgb(32, 32, 32);
+      background-color: #fafafa;
+      background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
     margin: 0%;
     display: flex;
     justify-content: center;
@@ -151,7 +152,7 @@ margin-top: 20px;
 .commentsection{
 
 
-background-color: rgb(102, 102, 102);
+background-color: rgb(196, 235, 184);
 height: max-content;
 width: 900px;
 border-radius: 40px;

@@ -5,7 +5,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
 import { CldUploadButton } from 'next-cloudinary';
+import style from "@/app/styles/courseManagement.module.css"
 export default function CourseManagement() {
 
   const [public_id, setPublicId] = useState("");
@@ -55,42 +57,6 @@ export default function CourseManagement() {
     'FULL STACK APP DEVELOPEMENT',
   ]);
 
-  const containerStyle = {
-    maxWidth: '600px',
-    margin: '0 auto',
-    padding: '20px',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-  };
-
-  const labelStyle = {
-    marginBottom: '8px',
-    fontWeight: 'bold',
-  };
-
-  const inputStyle = {
-    padding: '10px',
-    marginBottom: '16px',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-  };
-
-  const buttonStyle = {
-    backgroundColor: '#4caf50',
-    color: 'white',
-    padding: '10px 15px',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer',
-    fontSize: '16px',
-  };
-
-  const messageStyle = {
-    marginTop: '16px',
-    color: '#4caf50',
-    fontWeight: 'bold',
-  };
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -157,7 +123,8 @@ export default function CourseManagement() {
   };
 
   return (
-    <div style={containerStyle}>
+    
+    <div className={style.md}>
 
 <Head>
         <title>Course Management - Skillsail</title>
@@ -166,9 +133,13 @@ export default function CourseManagement() {
           content="Register new courses on Skillsail. Manage course details and categories for online learning."
         />
       </Head>
-      <h1 style={{ textAlign: 'center' }}>Course Registration</h1>
-      <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
-        <label htmlFor="courseName" style={labelStyle}>
+
+<Image src = "/c1.jpg" height={300} width={300} alt='course register'/>
+
+
+      <h1>Course Registration</h1>
+      <form onSubmit={handleFormSubmit} className={style.form}>
+        <label htmlFor="courseName" >
           Course Name:
         </label>
         <input
@@ -178,10 +149,10 @@ export default function CourseManagement() {
           value={formData.courseName}
           onChange={handleInputChange}
           required
-          style={inputStyle}
+   
         />
 
-        <label htmlFor="instructor" style={labelStyle}>
+        <label htmlFor="instructor" >
           Instructor:
         </label>
         <input
@@ -191,10 +162,10 @@ export default function CourseManagement() {
           value={formData.instructor}
           onChange={handleInputChange}
           required
-          style={inputStyle}
+        
         />
 
-        <label htmlFor="startDate" style={labelStyle}>
+        <label htmlFor="startDate" >
           Start Date:
         </label>
         <input
@@ -204,10 +175,10 @@ export default function CourseManagement() {
           value={formData.startDate}
           onChange={handleInputChange}
           required
-          style={inputStyle}
+          
         />
 
-        <label htmlFor="endDate" style={labelStyle}>
+        <label htmlFor="endDate">
           End Date:
         </label>
         <input
@@ -217,10 +188,10 @@ export default function CourseManagement() {
           value={formData.endDate}
           onChange={handleInputChange}
           required
-          style={inputStyle}
+    
         />
 
-        <label htmlFor="description" style={labelStyle}>
+        <label htmlFor="description" >
           Description:
         </label>
         <textarea
@@ -229,10 +200,10 @@ export default function CourseManagement() {
           value={formData.description}
           onChange={handleInputChange}
           required
-          style={inputStyle}
+       
         />
 
-        <label htmlFor="subDescription" style={labelStyle}>
+        <label htmlFor="subDescription" >
           Sub-Description:
         </label>
         <input
@@ -241,11 +212,11 @@ export default function CourseManagement() {
           name="subDescription"
           value={formData.subDescription}
           onChange={handleInputChange}
-          style={inputStyle}
+        
         />
 
         
-<label htmlFor="price" style={labelStyle}>
+<label htmlFor="price" >
           Price:
         </label>
         <input
@@ -255,10 +226,10 @@ export default function CourseManagement() {
           value={formData.price}
           onChange={handleInputChange}
     
-          style={inputStyle}
+        
         />
 
-        <label htmlFor="category" style={labelStyle}>
+        <label htmlFor="category">
           Category:
         </label>
         <input
@@ -268,7 +239,7 @@ export default function CourseManagement() {
           value={formData.category}
           onChange={handleInputChange}
           onFocus={() => setCategoryOptionsVisible(true)}
-          style={inputStyle}
+         
         />
 
 
@@ -283,21 +254,23 @@ export default function CourseManagement() {
           </ul>
         )}
 
- <CldUploadButton
+
+<button className={style.but} > <CldUploadButton
       uploadPreset="kartikp"
       cloudName={process.env.CLOUDINARY_NAME}
       onSuccess={handleSuccess}
-    />
+    /> </button>
+ 
         
 
-        {message && <div style={messageStyle}>{message}</div>}
-        <button type="submit" style={buttonStyle} >
+        {message && <div >{message}</div>}
+        <button  className={style.but} type="submit" >
           Register Course
         </button>
       </form>
 
 
-      <Link href="/paneladmin/coursem/viewcourses">VIEW COURSES</Link>
+     <button  className={style.but}>  <Link href="/paneladmin/coursem/viewcourses">VIEW COURSES</Link></button>
     </div>
   );
 }

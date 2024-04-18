@@ -1,8 +1,6 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import Head from 'next/head';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import styles from "@/app/styles/filter.module.css";
 import Courseinfo from "../components/Courseinfo";
 
@@ -16,9 +14,9 @@ export default function FILTERPAGE() {
 
   const [teachers, setTeachers] = useState({
     "KARTIK PATEKAR": false,
-    "sakshi": false,
-    "prajakta": false,
-    "sharyu": false
+    "VAIBHAV": false,
+    "SAKSHI": false,
+    "AYAN": false
   });
 
   const [priceRange, setPriceRange] = useState(0);
@@ -82,7 +80,7 @@ export default function FILTERPAGE() {
         />
       </Head>
 
-      <Header />
+   
       
       <div className={styles.App}>
         <div className={styles.div1}>
@@ -113,8 +111,8 @@ export default function FILTERPAGE() {
           <h2>Price Range:</h2>
           <input
             type="range"
-            min="0"
-            max="5000"
+            min="1000"
+            max="4000"
             value={priceRange}
             onChange={handlePriceRangeChange}
             className={styles.priceRangeInput}
@@ -122,7 +120,7 @@ export default function FILTERPAGE() {
           <p className={styles.priceRangeValue}>Current Price Range: ${priceRange}</p>
         </div>
         <div className={styles.div2}>
-          {/* <div className={styles.div4}> <p>{courses.length} Courses Found</p> </div> */}
+        
           <div className={styles.div3}>
             { courses && courses.map(course => (
               <div key={course._id}>
@@ -133,7 +131,7 @@ export default function FILTERPAGE() {
         </div>
       </div>
 
-      <Footer />
+   
     </div>
   );
 }

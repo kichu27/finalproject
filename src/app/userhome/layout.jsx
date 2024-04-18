@@ -1,8 +1,7 @@
 
-import styles from './page.module.css';
-
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Header from '../components/Header';
  
 export const metadata = {
   title: 'SKILLSAIL',
@@ -11,12 +10,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
  return (
-    <html className={styles.ht} lang="en">
+    <html lang="en">
       
 
-      <body className={styles.body1}>{children}</body>
-      <Analytics />
-      <SpeedInsights />
+      <body>
+        <Header />
+        {children}
+      
+      </body>
+    
     </html>
   )
 }

@@ -111,15 +111,15 @@ export default function FILTERPAGE() {
           <h2>Price Range:</h2>
           <input
             type="range"
-            min="1000"
-            max="4000"
+            min="0"
+            max="5000"
             value={priceRange}
             onChange={handlePriceRangeChange}
             className={styles.priceRangeInput}
           />
           <p className={styles.priceRangeValue}>Current Price Range: ${priceRange}</p>
         </div>
-        <div className={styles.div2}>
+     
         
           <div className={styles.div3}>
             { courses && courses.map(course => (
@@ -128,7 +128,7 @@ export default function FILTERPAGE() {
               </div>
             ))}
           </div>
-        </div>
+        
       </div>
 
    

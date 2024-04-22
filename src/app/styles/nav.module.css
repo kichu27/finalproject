@@ -204,3 +204,29 @@ cursor: pointer;
 
 
 }
+
+
+@media screen and (max-width: 600px) {
+
+.nav{
+
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+height: max-content;
+width: max-content;
+}
+
+.sepdiv {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: max-content;
+  width: max-content;
+  }
+  
+
+}

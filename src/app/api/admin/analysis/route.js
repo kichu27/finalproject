@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Course } from "@/models/CourseModel";
 import Connect from "@/lib/dbconn";
+import { User } from "@/models/usermodel";
 
 
 export async function GET(request)
@@ -10,46 +11,43 @@ export async function GET(request)
 
     try {
       
-        
+ const data2  = await User.aggregate([
+  {
+    $unwind: "$Boughtcourses",
+  },
+  {
+    $lookup: {
+      from: "courses",
+      localField: "Boughtcourses",
+      foreignField: "_id",
+      as: "courseInfo",
+    },
+  },
+  {
+    $unwind: "$courseInfo",
+  },
+  {
+    $project: {
+      category: "$courseInfo.category",
+      price: "$courseInfo.price",
+    },
+  },
+  {
+    $group: {
+      _id: "$category",
+      CourseCount: {
+        $count: {},
+      },
+      RevenueGenerated: {
+        $sum: {
+          $multiply: ["$price", 1],
+        },
+      },
+    },
+  },
   
-        const data2 = await Course.aggregate([
-          {
-            $unwind: "$Boughtcourses",
-          },
-          {
-            $lookup: {
-              from: "courses",
-              localField: "Boughtcourses",
-              foreignField: "_id",
-              as: "courseInfo",
-            },
-          },
-          {
-            $unwind: "$courseInfo",
-          },
-          {
-            $project: {
-              category: "$courseInfo.category",
-              price: "$courseInfo.price",
-            },
-          },
-          {
-            $group: {
-              _id: "$category",
-              CourseCount: {
-                $count: {},
-              },
-              RevenueGenerated: {
-                $sum: {
-                  $multiply: ["$price", 1],
-                },
-              },
-            },
-          },
-        ] );
+]) ; 
 
-        console.log(data2);
-        
       const data = await Course.aggregate([
             {
               $group: {
@@ -97,10 +95,11 @@ export async function GET(request)
 
 
 
-        return NextResponse.json({data:data})
+        return NextResponse.json({data:data  ,data2 : data2})
         
     } catch (error) {
-        console.log(error);
+      return NextResponse.json({Message : "Failed to fetch analysis data"})
+     
     }
 
 

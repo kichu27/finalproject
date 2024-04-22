@@ -12,6 +12,7 @@ background: inherit
 }
 
 
+
 .d1{
 
 display: flex;
@@ -64,20 +65,14 @@ text-align: justify;
     
     }
 .sd2
-{
-
-
-margin-left: 360px;
+{margin-left: 360px;
 margin-top: 150px;
-
-
 }
 
 
 .mmdiv{
-
-  background-color: hwb(240 72% 12%);
-  margin: 0;
+background-color: hwb(240 72% 12%);
+margin: 0;
 border-radius: 50px;
 display: flex;
 justify-content: center;
@@ -85,4 +80,14 @@ align-items: center;
 flex-direction: column;
 }
 
+@media only screen and (max-width: 600px) {
+.d1{
+
+background-color: greenyellow;
+display: flex;
+flex-direction: column;
+height: max-content;
+margin-bottom: 50px;
+}
+}
 

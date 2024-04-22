@@ -41,11 +41,6 @@ margin-right: 20px;
 
 
 
-  .body
-  {
-  
-
-  }
 
   .body1{
 
@@ -62,5 +57,21 @@ background-image: url("/SS.png");
 height: 100vh;
   margin: 0px;
 
+  }
+
+  
+@media only screen and (max-width: 600px) {
+  .ht {
+background-image: url("/SS.png");
+background-size: contain  ;
+background-repeat: repeat;
+ 
+
 
   }
+  .but{
+
+    display: grid;
+  place-items: center;
+    }
+}

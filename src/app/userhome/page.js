@@ -16,7 +16,7 @@ export default function UserHomepage() {
         <meta
           name="description"
           content="Navigate your personal journey to success with SkillSail's compassionate guidance and expert courses."
-        />z
+        />
       </Head>
 
       

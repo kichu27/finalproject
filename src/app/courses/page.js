@@ -64,7 +64,7 @@ export default function CoursePage() {
 
       const data = await response.json();
       const { d1, d2, d3, d4 } = data;
-      console.log("the d3 data is", d3);
+
       setStateD1(d1)
       setStateD2(d2)
       setStateD3(d3)
@@ -100,7 +100,7 @@ export default function CoursePage() {
       </div>
 
 
-  
+    
 
         <CoursesDisplay Heading="POPULAR COURSES" State={array} />
         <CoursesDisplay Heading="APP DEVELOPEMENT" State={stateD3} />

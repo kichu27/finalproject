@@ -83,7 +83,7 @@ success: true ,
     console.log("ROUTE ERROR !" , error);
     return NextResponse.json({
         status: 500,
-        message: "Internal Server Error",
+        message: "Please Refresh the Screen",
         success: false,
       });
 }

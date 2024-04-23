@@ -31,16 +31,16 @@ const Footer = () => {
                     <div className={footerStyles['link-boxes']}>
                         <ul className={footerStyles.box}>
                             <li className={footerStyles.link_name}>Company</li>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/contacts">Contact us</a></li>
-                            <li><a href="/aboutus">About us</a></li>
+                            <li><a href="/courses">Home</a></li>
+                            <li><a href="/userhome">About us</a></li>
                             <li><a href="/courses">Courses</a></li>
                         </ul>
                         <ul className={footerStyles.box}>
                             <li className={footerStyles.link_name}>Services</li>
-                            <li><a href="/faq">FAQs</a></li>
-                            <li><a href="/gallery">Gallery</a></li>
-                            <li><a href="/courses">Courses</a></li>                            
+                            <li><a href="/FILTERPAGE">Filter</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/community">Community</a></li>
+                            <li><a href="/profiledashboard">Profile</a></li>                            
                         </ul>
                        
                         <ul className={footerStyles.box}>

@@ -251,3 +251,13 @@
   background-color: #fafafa;
   background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }
+
+
+@media only screen and (max-width: 600px) {
+  .mdiv{
+
+height: max-content;
+width: fit-content;
+
+  }
+}

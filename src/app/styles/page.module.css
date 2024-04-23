@@ -81,13 +81,13 @@ flex-direction: column;
 }
 
 @media only screen and (max-width: 600px) {
-.d1{
 
-background-color: greenyellow;
-display: flex;
-flex-direction: column;
-height: max-content;
-margin-bottom: 50px;
+
+.mmdiv{
+
+  height: max-content;
+  width: fit-content;
+
 }
 }
 

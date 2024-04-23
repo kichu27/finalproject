@@ -71,7 +71,7 @@ export default function FILTERPAGE() {
   };
 
   return (
-    <div>
+    <div className={styles.div5}>
       <Head>
         <title>SkillSail - Embark on a Learning Odyssey</title>
         <meta

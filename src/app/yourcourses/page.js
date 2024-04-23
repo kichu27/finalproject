@@ -75,9 +75,9 @@ const payload = {
   merchantTransactionId: transactionid,
   merchantUserId: 'MUID-'+uuidv4().toString(36).slice(-6),
   amount:bill,
-  redirectUrl: `https://finalproject-gold.vercel.app//api/status/${transactionid}`,
+  redirectUrl: `https://finalproject-gold.vercel.app/api/status/${transactionid}`,
   redirectMode: "POST",
-  callbackUrl: `https://finalproject-gold.vercel.app//api/status/${transactionid}`,
+  callbackUrl: `https://finalproject-gold.vercel.app/api/status/${transactionid}`,
   mobileNumber: '9999999999',
   paymentInstrument: {
     type: "PAY_PAGE",

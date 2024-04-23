@@ -27,6 +27,13 @@ export default function AdminPage() {
     router.push('/Analysis');
   };
 
+  
+  const handleupdateclick = () => {
+    router.push('/paneladmin/CourseUpdate');
+  };
+
+
+
 
 
   return (
@@ -49,11 +56,15 @@ export default function AdminPage() {
         </div>
 
         <div onClick={handlenotificationManagementClick} className={pastyles.div}>
-          <h2>Notification Management</h2>
+          <h2>Notifications</h2>
         </div>
 
         <div onClick={handleanalysisclick} className={pastyles.div}>
-          <h2>Analysis </h2>
+          <h2>Analysis  </h2>
+        </div>
+
+        <div onClick={handleupdateclick} className={pastyles.div}>
+          <h2>Course Updation </h2>
         </div>
       </div>
       </div>

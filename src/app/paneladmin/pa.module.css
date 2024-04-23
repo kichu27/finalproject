@@ -1,22 +1,18 @@
 /* pa.module.css */
 
-.mainbody{
-margin: 0px;
-padding: 0px;
-height: max-content;
-width: 100%;
-background-color: rgb(33, 33, 188)
-}
+
 
 .body {
 font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 background-color: rgb(133, 175, 175);
 width: 100%;
-height: 100vh;
+height: max-content;
 display: flex;
 align-items: center;
 justify-content:center;
 flex-direction: column;
+border-radius: 30px;
+margin-top: 20px;
 
 }
   
@@ -37,6 +33,8 @@ flex-direction: column;
     padding: 130px;
     border-radius: 190px;
     width: 1200px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
   }
   
   .div {

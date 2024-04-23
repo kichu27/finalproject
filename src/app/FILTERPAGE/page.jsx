@@ -7,9 +7,9 @@ import Courseinfo from "../components/Courseinfo";
 export default function FILTERPAGE() {
   const [categories, setCategories] = useState({
     "DATA SCIENCE": false,
-    "FULL STACK WEB DEVELOPMENT": false,
+    "FULL STACK WEB DEVELOPEMENT": false,
     "FULL STACK JAVA": false,
-    "FULL STACK APP DEVELOPMENT": false
+    "FULL STACK APP DEVELOPEMENT": false
   });
 
   const [teachers, setTeachers] = useState({

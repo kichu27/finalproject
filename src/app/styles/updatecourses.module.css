@@ -1,0 +1,80 @@
+.maindiv1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    background: rgb(247, 130, 140);
+  
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+        border-radius: 40px;
+        }
+
+.maindiv {
+
+background-color: rgba(255, 255, 255, 0.94);
+width: 800px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+border-radius: 40px;
+padding: 50px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+margin-top: 50px;
+margin-bottom: 50px;
+
+}
+
+
+.maindiv select{
+
+    padding: 10px;
+    border-radius: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.maindiv form {
+
+
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+flex-wrap: wrap;
+
+
+
+}
+
+
+.maindiv input {
+
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+   
+}
+
+.maindiv button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: inherit;
+    transition: all 1s ease-in-out;
+
+}
+
+.maindiv button:hover{
+    
+    background-color: rgb(218, 247, 160);
+
+    border-radius: 30px;
+    transform: scale(1.2);
+    letter-spacing: 1.4px;
+color: black;
+}
+
+.maindiv p {
+
+color: green;
+font-size: larger;
+
+}

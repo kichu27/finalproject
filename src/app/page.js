@@ -75,7 +75,10 @@ Skillsail is an innovative online platform designed to empower learners by offer
 <meta name="twitter:title" content="SkillSail"/>
 <meta name="twitter:description" content="
 Skillsail is an innovative online platform designed to empower learners by offering a diverse range of exciting courses. Whether you're looking to enhance your professional skills, explore new interests, or simply expand your knowledge, Skillsail provides a curated selection of courses taught by expert instructors."/>
-<meta name="twitter:image" content="https://finalproject-p54m2jb9j-kartiks-projects-3fb81984.vercel.app/opengraph-image.png?3fe51da6361755b1"/></Head>
+<meta name="twitter:image" content="https://finalproject-p54m2jb9j-kartiks-projects-3fb81984.vercel.app/opengraph-image.png?3fe51da6361755b1"/>
+
+<meta name="google-site-verification" content="TgYVk9UwiLqATcJpCDeqVhzZr7QeJFoHX614xxDqlMs" />
+</Head>
 
 <div className={styles.header}>
   

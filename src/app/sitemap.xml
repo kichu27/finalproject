@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Login Page -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/login</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Signup Page -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/signup</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- User Home Page -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/userhome</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Verify Email Page -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/verifyemail</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Courses Page -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/courses</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Favorite Courses Page -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/favcourses</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Filter Page -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/filterpage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Success Page -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/success</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Failure Page -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/failure</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/contacts</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Page -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Profile Dashboard Page -->
+  <url>
+    <loc>https://finalproject-gold.vercel.app/profiledashboard</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

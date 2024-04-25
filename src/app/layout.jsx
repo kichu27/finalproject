@@ -6,7 +6,9 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata = {
   title: 'SKILLSAIL - Explore & Buy Exciting Courses',
-  description: 'Discover a wide range of engaging courses and make purchases conveniently.'
+  description: 'Discover a wide range of engaging courses and make purchases conveniently.' , 
+
+
 }
 
 

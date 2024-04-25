@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from "next/link"
-
+import Script from 'next/script';
 
 
 
@@ -62,7 +62,12 @@ export default function Homepage() {
   return (
     <div className={styles.body}>
 
-<Head> <meta property="og:title" content="SkillSail" />
+<Head> 
+  
+<meta name="google-site-verification" content="TgYVk9UwiLqATcJpCDeqVhzZr7QeJFoHX614xxDqlMs" />
+
+  
+<meta property="og:title" content="SkillSail" />
 <meta property="og:description" content="
 Skillsail is an innovative online platform designed to empower learners by offering a diverse range of exciting courses. Whether you're looking to enhance your professional skills, explore new interests, or simply expand your knowledge, Skillsail provides a curated selection of courses taught by expert instructors."/>
 <meta property="og:image" content="https://finalproject-p54m2jb9j-kartiks-projects-3fb81984.vercel.app/opengraph-image.png?3fe51da6361755b1"/>
@@ -77,9 +82,12 @@ Skillsail is an innovative online platform designed to empower learners by offer
 Skillsail is an innovative online platform designed to empower learners by offering a diverse range of exciting courses. Whether you're looking to enhance your professional skills, explore new interests, or simply expand your knowledge, Skillsail provides a curated selection of courses taught by expert instructors."/>
 <meta name="twitter:image" content="https://finalproject-p54m2jb9j-kartiks-projects-3fb81984.vercel.app/opengraph-image.png?3fe51da6361755b1"/>
 
-<meta name="google-site-verification" content="TgYVk9UwiLqATcJpCDeqVhzZr7QeJFoHX614xxDqlMs" />
+
+
+
 </Head>
 
+ 
 <div className={styles.header}>
   
 <Link href="/LOGIN"> <button className={styles.but} > LOGIN  </button> </Link>  

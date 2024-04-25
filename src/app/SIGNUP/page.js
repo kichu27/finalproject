@@ -60,11 +60,20 @@ export default function Homepage() {
     <div className={styles.body}>
 
 <Head>
-        <title>Sign Up - Your Website Name</title>
+       
         <meta
           name="description"
           content="Sign up for an account at Your Website Name and start your learning journey. Register with your full name, phone number, email, and password."
         />
+           <Head>
+
+
+<meta name="google-site-verification" content="TgYVk9UwiLqATcJpCDeqVhzZr7QeJFoHX614xxDqlMs" />
+
+
+
+
+    </Head>
       </Head>
 
       <div className={styles.container}>

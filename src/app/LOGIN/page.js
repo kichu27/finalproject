@@ -5,6 +5,7 @@ import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
 import Link from "next/link"
 import style from "@/app/LOGIN/page.module.css"
+import Head from 'next/head';
 
 export default function Loginpage() {
   const [user, setuser] = useState({ email: '', password: '' });
@@ -45,6 +46,15 @@ export default function Loginpage() {
 
   return (
     <div className={style.container}>
+      <Head>
+
+
+  <meta name="google-site-verification" content="TgYVk9UwiLqATcJpCDeqVhzZr7QeJFoHX614xxDqlMs" />
+
+
+
+
+      </Head>
       <h1 className={style.title}>LOG IN</h1>
       <div className={style.containerStyle}>
         <input

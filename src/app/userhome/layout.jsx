@@ -4,9 +4,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Header from '../components/Header';
  
 export const metadata = {
-  title: 'SKILLSAIL',
-  description: 'Explore & Buy Exciting Courses ',
-}
+  title: 'About SKILLSAIL',
+  description: 'Learn more about SKILLSAIL - your destination for discovering and purchasing exciting courses.',
+};
+
 
 export default function RootLayout({ children }) {
  return (

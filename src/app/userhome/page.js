@@ -11,14 +11,7 @@ import sty from "@/app/styles/page.module.css"
 export default function UserHomepage() {
   return (
     <div className={sty.mmdiv}>
-      <Head>
-        <title>SkillSail - Embark on a Learning Odyssey</title>
-        <meta
-          name="description"
-          content="Navigate your personal journey to success with SkillSail's compassionate guidance and expert courses."
-        />
-      </Head>
-
+    
       
       <Herosection
         url={'/unity.png'}

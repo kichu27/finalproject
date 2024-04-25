@@ -43,12 +43,13 @@ export async function POST(req, res) {
 
 
   
-  return NextResponse.redirect("https://finalproject-gold.vercel.app//success",{
+  return NextResponse.redirect("http://localhost:3000/success",{
     status: 301,
   });
-else return NextResponse.redirect("https://finalproject-gold.vercel.app//failure",{
+else return NextResponse.redirect("http://localhost:3000/failure",{
   status: 301,
 });
+
 
 
 

@@ -4,13 +4,11 @@
   import Image from "next/image";
   import s from "@/app/styles/s.module.css";
   import Link from "next/link"
+  import Head from "next/head";
 
 
 
-
-
-
-
+  
 
 
 
@@ -20,6 +18,7 @@
     
     let msg1 = "COURSE SUCCESSFULLY ADDED"
     const { id } = params;
+
 
   
     const [course, setCourse] = useState(null);
@@ -73,7 +72,9 @@
     });
 
     }
+
     return (<div className={s.ssdiv}>
+ 
 
       <div className={s.hh}> 
       <Link href="/courses"><Image className={s.i} src={"/hh.png"} width={30} height={30} alt='delet text' />
@@ -94,7 +95,7 @@
             </p>
             <p>{course.subDescription}</p>
             <p>{course.description}</p>
-            <hr />
+            <hr/>
             <p>Instructor: {course.instructor}</p>
             <p>Price: {course.price}</p>
 

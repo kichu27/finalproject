@@ -83,16 +83,10 @@ const [noti, setnotis] = useState([])
     }
   };
 
-  useEffect(() => {
-    document.title = isadmin ? 'Admin Panel - Skillsail' : 'Skillsail - Online Courses Platform';
-  }, [isadmin]);
-
+ 
   return (
     <div>
-      <Head>
-        <meta name="description" content={`Explore ${isadmin ? 'admin panel' : 'online courses and blogs'} on Skillsail. Enhance your skills and knowledge with our high-quality courses.`} />
-      </Head>
-
+     
       <nav className={styles.nav}>
         <ul className={styles.navList}>
           {!isadmin && <li><Link  className={styles.navbut} href="/courses">COURSES</Link></li>}

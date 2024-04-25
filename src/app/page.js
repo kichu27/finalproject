@@ -5,6 +5,9 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from "next/link"
 
+
+
+
 export default function Homepage() {
   const [User, setUser] = useState({ username: '', number: '', email: '', password: '' });
   const [passwordError, setPasswordError] = useState('');
@@ -59,20 +62,14 @@ export default function Homepage() {
   return (
     <div className={styles.body}>
 
-<Head>
-        <title>Sign Up - Your Website Name</title>
-        <meta
-          name="description"
-          content="Sign up for an account at Your Website Name and start your learning journey. Register with your full name, phone number, email, and password."
-        />
-      </Head>
 
-<header className={styles.header}>
+
+<div className={styles.header}>
   
 <Link href="/LOGIN"> <button className={styles.but} > LOGIN  </button> </Link>  
 <Link href="/SIGNUP"> <button className={styles.but} > SIGNUP </button> </Link>  
 
-   </header>
+   </div>
 
       
     </div>

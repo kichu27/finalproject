@@ -9,8 +9,6 @@ function Analysis() {
 
  
   const [analyticsData, setAnalyticsData] = useState([]); 
-  const [xa , setxa] = useState([])
-  const [ya , setya] = useState([])
 
  const [d2 , setd2] = useState([])
    useEffect(() => {

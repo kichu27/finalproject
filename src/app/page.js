@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from "next/link"
-import Script from 'next/script';
 
 
 
@@ -63,24 +62,26 @@ export default function Homepage() {
     <div className={styles.body}>
 
 <Head> 
-  
-<meta name="google-site-verification" content="TgYVk9UwiLqATcJpCDeqVhzZr7QeJFoHX614xxDqlMs" />
+<title>User Home</title>
+<meta name="google-site-verification" content={process.env.GOOGLE_VERIFICATION_ID} />
 
-  
-<meta property="og:title" content="SkillSail" />
-<meta property="og:description" content="
-Skillsail is an innovative online platform designed to empower learners by offering a diverse range of exciting courses. Whether you're looking to enhance your professional skills, explore new interests, or simply expand your knowledge, Skillsail provides a curated selection of courses taught by expert instructors."/>
-<meta property="og:image" content="https://finalproject-p54m2jb9j-kartiks-projects-3fb81984.vercel.app/opengraph-image.png?3fe51da6361755b1"/>
-<meta property="og:url" content="https://finalproject-p54m2jb9j-kartiks-projects-3fb81984.vercel.app/"/>
-<meta property="og:site_name" content="Skillsail "/>
-<meta property="og:type" content="website"/>
-        
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="SkillSail"/>
-<meta name="twitter:description" content="
-Skillsail is an innovative online platform designed to empower learners by offering a diverse range of exciting courses. Whether you're looking to enhance your professional skills, explore new interests, or simply expand your knowledge, Skillsail provides a curated selection of courses taught by expert instructors."/>
-<meta name="twitter:image" content="https://finalproject-p54m2jb9j-kartiks-projects-3fb81984.vercel.app/opengraph-image.png?3fe51da6361755b1"/>
+
+<meta name="title" content="SKILLSAIL - Explore & Buy Exciting Courses" />
+<meta name="description" content="Discover a wide range of engaging courses and make purchases conveniently." />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://finalproject-gold.vercel.app/" />
+<meta property="og:title" content="SKILLSAIL - Explore & Buy Exciting Courses" />
+<meta property="og:description" content="Discover a wide range of engaging courses and make purchases conveniently." />
+<meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://finalproject-gold.vercel.app/" />
+<meta property="twitter:title" content="SKILLSAIL - Explore & Buy Exciting Courses" />
+<meta property="twitter:description" content="Discover a wide range of engaging courses and make purchases conveniently." />
+<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
 
 
 

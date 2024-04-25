@@ -1,0 +1,19 @@
+User-agent: *
+Disallow: /admin
+Disallow: /secret
+Disallow: /private
+
+Allow: /$
+Allow: /LOGIN
+Allow: /SIGNUP
+Allow: /userhome
+Allow: /verifyemail
+Allow: /yourcourses
+Allow: /favcourses
+Allow: /FILTREPAGE
+Allow: /success
+Allow: /failure
+Allow: /courses
+Allow: /contacts
+Allow: /blog
+Allow: /profiledashboard

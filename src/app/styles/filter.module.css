@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 20% 1fr;
     margin-top: 20px;
-    background-color: #bcf7e3;
+    background-color: #ebfff8;
     border-radius: 40px;
     height: max-content;
   }
@@ -13,7 +13,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
   }
 
   .div1 {
-    background-color: hsl(111, 52%, 90%);
+    background-color: hsl(0, 0%, 100%);
     padding: 20px;
     width: 280px;
 display: flex;

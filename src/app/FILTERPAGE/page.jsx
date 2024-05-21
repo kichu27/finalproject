@@ -14,9 +14,9 @@ export default function FILTERPAGE() {
 
   const [teachers, setTeachers] = useState({
     "KARTIK PATEKAR": false,
-    "VAIBHAV": false,
-    "SAKSHI": false,
-    "AYAN": false
+    "NEHA": false,
+    "SARTHAK BARI": false,
+    "VAIBHAV": false
   });
 
   const [priceRange, setPriceRange] = useState(0);

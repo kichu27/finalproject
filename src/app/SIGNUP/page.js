@@ -3,7 +3,10 @@ import styles from './page.module.css';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Link from "next/link"
+import Link from "next/link" ; 
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Homepage() {
   const [User, setUser] = useState({ username: '', number: '', email: '', password: '' });
@@ -44,11 +47,15 @@ export default function Homepage() {
       if (data.success) {
         setPasswordError('');
         setServerMessage(data.message);
+        const notify = () => toast(serverMessage);
+        notify()
         setevm(true)
         router.push('/LOGIN')
         
       } else {
         setServerMessage(data.message);
+        notify()
+
       }
     } catch (error) {
       console.error('User Registration Failed ', error);
@@ -128,7 +135,7 @@ export default function Homepage() {
     LOGIN
   </Link>
 </button> </div>
-
+<ToastContainer />
       
       </div>	
 

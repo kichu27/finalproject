@@ -112,6 +112,9 @@ export default function Profilepage({ params }) {
                 <hr />
                 <p>--- Istructor ---</p>
                 <p> {c.instructor} </p>
+                <p>--- Access The Course ---</p>
+<Link  href="/BoughtCourse">CLICK HERE  </Link>
+
 
               </div>
 

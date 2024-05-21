@@ -6,8 +6,15 @@ import Head from 'next/head';
 import s from "@/app/styles/s.module.css"
 import Image from 'next/image';
 import Link from 'next/link';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const FavCoursePage = ({ name }) => {
+
+
+  
+  const notify = () => toast("DELETED COURSE !");
+
   const [favCourses, setFavCourses] = useState([]);
 
   async function fetchData() {
@@ -43,6 +50,7 @@ const FavCoursePage = ({ name }) => {
 
       if (response.ok) {
         fetchData();
+        notify()
       } else {
         console.error('Failed to delete favorite course.');
       }
@@ -89,7 +97,7 @@ const FavCoursePage = ({ name }) => {
 
 </div>
 
-
+<ToastContainer />
     </div>
   );
 };

@@ -7,7 +7,12 @@ import Link from "next/link"
 import style from "@/app/LOGIN/page.module.css"
 import Head from 'next/head';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Loginpage() {
+  
+  const notify = () => toast(" SUCCESSFULL LOGIN !");
+
   const [user, setuser] = useState({ email: '', password: '' });
   const [servermsg, setservermsg] = useState('');
   const router = useRouter();
@@ -33,6 +38,7 @@ export default function Loginpage() {
 
       const { status, message, token } = await response.json();
       setservermsg(message);
+      notify()
       if (status === 200) {
         Cookies.set('token', token, { expires: 1 });
         router.push('/userhome');
@@ -85,6 +91,7 @@ export default function Loginpage() {
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }

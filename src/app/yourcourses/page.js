@@ -6,10 +6,15 @@ import Image from 'next/image';
 import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid';
 import sha256 from "crypto-js/sha256";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 
 import { useRouter } from "next/navigation";
 
 const FavCartPage = ({ name }) => {
+
+  const notify = () => toast("DELETED COURSE !");
 
   const router = useRouter();
   const [favCourses, setFavCourses] = useState([]);
@@ -55,7 +60,7 @@ const {favoriteCourses} = data
       
   
       if (response.ok) {
-        console.log('Favorite course deleted successfully.');
+        notify()
         fetchData();
       } else {
         console.error('Failed to delete favorite course.');
@@ -70,6 +75,7 @@ const makepayment = async () => {
 
 const transactionid = "Tr-"+uuidv4().toString(36).slice(-6)
 
+
 const payload = {
   merchantId: process.env.NEXT_PUBLIC_MERCHANT_ID,
   merchantTransactionId: transactionid,
@@ -83,7 +89,6 @@ const payload = {
     type: "PAY_PAGE",
   },
 };
-
 
 
 
@@ -176,7 +181,7 @@ return <div className={s.ccdiv1}  key={course._id}>
 <button className={s.butt} onClick={makepayment}>CHECKOUT </button>
 
 </div> 
-
+<ToastContainer />
 
 </div>
 

@@ -3,9 +3,16 @@ import { CldImage } from 'next-cloudinary';
 import Image from "next/image"
 import Link from "next/link"
 import s from "@/app/styles/s.module.css"
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
+  import { truncate } from 'lodash';
+  
 
 function Courseinfo(props) {
+
+  const notify = () => toast("LIKED COURSE !");
+    
 
   async function addtofav(value) {
 
@@ -18,6 +25,7 @@ function Courseinfo(props) {
         body: JSON.stringify({ value }),
       });
 
+      notify()
 
   }
 
@@ -32,7 +40,7 @@ function Courseinfo(props) {
 
       <p>DURATION</p>
       <p> {new Date(props.c.startDate).toLocaleDateString()} - {new Date(props.c.endDate).toLocaleDateString()} </p>
-      <p>{props.c.subDescription}</p>
+      <p>{truncate(props.c.subDescription, { length: 20 })}</p>
       <hr />
       <div className={s.del}>
 
@@ -45,7 +53,7 @@ function Courseinfo(props) {
           Read More
         </button>
       </Link>
-
+<ToastContainer/>
     </div>
   )
 }

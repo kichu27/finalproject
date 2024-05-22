@@ -27,30 +27,62 @@ if (emailtype ==="VERIFY") {
 
 
 var transport = nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 2525,
+    service  : "gmail" , 
+    port : 465 , 
+    secure  : true ,
+    logger : true , 
+    debug : true , 
+    secureConnection :false ,  
     auth: {
-      user: "3cb419802de517",
-      pass: "cc5aaf687feff0"
+      user : "kartikpatekar27@gmail.com"   , 
+      pass: "nxgt kpym nrvp xzij"
+    } , 
+
+    tls : {
+
+
+      rejectUnauthorized : true 
     }
-  });
+  }); 
 
-
+ 
     const mailOptions = {
-        from:'kp@gmail.com',
+        from:'kartikpatekar27@gmail.com',
         to: email,
         subject: emailtype === "VERIFY" ? "Verify your email" : "Reset your password",
         html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; background-color: #f2f2f2; border-radius: 8px;">
-          <p style="font-size: 18px; color: #333; margin-bottom: 20px;">
-            Click <a href="http://localhost:3000/verifyemail?token=${hashedToken}" style="color: #007bff; text-decoration: none; font-weight: bold;">here</a> to ${
-        emailtype === 'VERIFY' ? 'verify your email' : 'reset your password'
-      } or copy and paste the link below in your browser.
-          </p>
-          <p style="font-size: 16px; color: #555; margin: 10px 0;">
-            http://localhost:3000/verifyemail?token=${hashedToken}
-          </p>
-        </div>
+        <div
+  style="background-image: url('https://i.pinimg.com/originals/8f/c5/3f/8fc53fc5d0336c5eec2921c0033e33fc.png'); height: 100vh; background-repeat: no-repeat; background-size: cover; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;"
+>
+  <div
+    style="background-color: rgba(240, 255, 255, 0.458); padding: 50px; border-radius: 20px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: larger; display: flex; flex-direction: row; justify-content: center; align-items: center;"
+  >
+    <p>
+      Click
+      <div
+        style="padding: 20px; background-color: rgba(219, 218, 218, 0.892); height: max-content; width: max-content; margin: 10px; transition: all 1s ease-in-out;"
+        onmouseover="this.style.borderRadius='50px'; this.style.backgroundColor='rgb(182, 182, 255)'; this.style.color='white';"
+        onmouseout="this.style.borderRadius=''; this.style.backgroundColor='rgba(219, 218, 218, 0.892)'; this.style.color='black';"
+      >
+        <a
+          href="https://finalproject-gold.vercel.app/verifyemail?token=${hashedToken}"
+          style="text-decoration: none; color: black; cursor: pointer;"
+          >here</a
+        >
+      </div>
+      to ${emailtype === 'VERIFY' ? 'verify your email' : 'reset your password'}
+    </p>
+  </div>
+
+  <div
+    style="background-color: rgba(240, 255, 255, 0.99); padding: 50px; border-radius: 20px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: larger; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 60px;"
+  >
+    <p>or copy and paste the link in your browser.</p>
+
+    <h4>https://finalproject-gold.vercel.app/verifyemail?token=${hashedToken}</h4>
+  </div>
+</div>
+
       `,
     }
 

@@ -50,8 +50,6 @@ export default function Homepage() {
         const notify = () => toast(serverMessage);
         notify()
         setevm(true)
-        router.push('/LOGIN')
-        
       } else {
         setServerMessage(data.message);
         notify()

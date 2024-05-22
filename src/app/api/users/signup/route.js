@@ -55,16 +55,16 @@ const SavedUser = await User.create({
 
 
 
-// if (SavedUser) {
+if (SavedUser) {
 
-//   await sendemail(email ,"VERIFY", SavedUser._id)
-// }
+  await sendemail(email ,"VERIFY", SavedUser._id)
+}
 
-// else 
-// {
+else 
+{
 
-// log("Email Couldn't be send !")
-// }
+console.log("Email Couldn't be send !")
+}
 
 
 return NextResponse.json({

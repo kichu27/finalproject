@@ -162,10 +162,35 @@ async function bookmark(id)
 
 <div className={styles.subsection1}>
 
-<div> <img  className={styles.ppimg} src={issue.createdBy.profile_link} alt="pp" height={50} width={50} /> </div>
+<div className={styles.subsection1}>
+  {issue.createdBy ? (
+    <div>
+      <Image
+        className={styles.ppimg}
+        src={issue.createdBy.profile_link}
+        alt="pp"
+        height={50}
+        width={50}
+      />
+    </div>
+  ) : (
+    <div>
+      {/* You can display a placeholder image or message if needed */}
+      <Image
+        className={styles.ppimg}
+        src='/default-profile.png' // Placeholder image
+        alt="pp"
+        height={50}
+        width={50}
+      />
+    </div>
+  )}
+</div>
 
-<div className={styles.subsection2}> <h3>{issue.createdBy.username}</h3> <h6> {new Date(issue.issueCreated).toDateString()} </h6>   </div>
-
+<div className={styles.subsection2}>
+  <h3>{issue.createdBy?.username || 'Unknown User'}</h3>
+  <h6>{new Date(issue.issueCreated).toDateString()}</h6>
+</div>
 </div>
 
 <div className={styles.subsection3}>

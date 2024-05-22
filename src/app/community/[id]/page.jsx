@@ -91,19 +91,39 @@ setcommentdata(resdata)
           <div className={styles.completediv}>
             <div className={styles.eachdiv} key={data._id}>
               <div className={styles.subsection1}>
-                <div>
-                  <img
-                    className={styles.ppimg}
-                    src={data.createdBy.profile_link}
-                    alt="pp"
-                    height={50}
-                    width={50}
-                  />
-                </div>
-                <div className={styles.subsection2}>
-                  <h3>{data.createdBy.username}</h3>{" "}
-                  <h6>{new Date(data.issueCreated).toDateString()}</h6>{" "}
-                </div>
+              <div>
+  {data.createdBy && data.createdBy.profile_link ? (
+    <img
+      className={styles.ppimg}
+      src={data.createdBy.profile_link}
+      alt="pp"
+      height={50}
+      width={50}
+    />
+  ) : (
+    <img
+      className={styles.ppimg}
+      src="/pp.jpg"
+      alt="pp"
+      height={50}
+      width={50}
+    />
+  )}
+</div>
+<div className={styles.subsection2}>
+  {data.createdBy ? (
+    <>
+      <h3>{data.createdBy.username}</h3>
+      <h6>{data.issueCreated ? new Date(data.issueCreated).toDateString() : "Date Not Available"}</h6>
+    </>
+  ) : (
+    <>
+      <h3>Unknown User</h3>
+      <h6>{data.issueCreated ? new Date(data.issueCreated).toDateString() : "Date Not Available"}</h6>
+    </>
+  )}
+</div>
+
               </div>
               <div className={styles.subsection3}>
                 <p>{data.issueContent}</p>
@@ -132,7 +152,7 @@ setcommentdata(resdata)
       />
       <button type="submit">Submit</button>
     </form>
-    
+  
   </div>
 ) : (null)}
 {<p className={styles.txt}>{messages}</p>}
@@ -149,13 +169,23 @@ setcommentdata(resdata)
 
 return <div className={styles.commentbox} key={cd._id}> 
 
-<div className={styles.upper}> 
-  <img className={styles.ppimg2} src={cd.user.profile_link} alt="pp" height={50} width={50} />
+<div className={styles.upper}>
+  {cd.user && cd.user.profile_link && (
+    <img
+      className={styles.ppimg2}
+      src={cd.user.profile_link}
+      alt="pp"
+      height={50}
+      width={50}
+    />
+  )}
 
-  <div className={styles.dipper}>  <p className={styles.na}>{cd.user.username}</p> <p>{cd.content}</p>  </div>
-  
-  
-   </div>
+  <div className={styles.dipper}>
+    <p className={styles.na}>{cd.user ? cd.user.username : "Unknown User"}</p>
+    <p>{cd.content}</p>
+  </div>
+</div>
+
 
 
 </div>

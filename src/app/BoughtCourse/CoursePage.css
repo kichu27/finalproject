@@ -1,0 +1,150 @@
+.course-page {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  .course-header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .course-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #2c3e50;
+  }
+  
+  .course-header p {
+    font-size: 1.2em;
+    color: #7f8c8d;
+  }
+  
+  .course-content {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .course-main {
+    flex: 3;
+    margin-right: 20px;
+  }
+  
+  .course-video {
+    margin-bottom: 20px;
+  }
+  
+  .course-curriculum, .course-description, .course-objectives, .course-instructor, .course-reviews, .student-feedback, .related-courses, .course-faq {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-curriculum ul, .course-objectives ul, .course-faq .faq-item {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .course-curriculum ul li, .course-objectives ul li, .course-faq .faq-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .course-curriculum ul li.selected {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  .course-curriculum ul li:hover, .course-objectives ul li:hover, .course-faq .faq-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .course-instructor .instructor-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .course-instructor .instructor-info img {
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .course-reviews .review, .student-feedback .feedback {
+    margin-bottom: 15px;
+  }
+  
+  .related-courses .related-course {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  .related-courses .related-course:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .course-faq .faq-item h3 {
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  .course-faq .faq-item p {
+    margin: 5px 0 0;
+    display: none;
+  }
+  
+  .course-faq .faq-item.active p {
+    display: block;
+  }
+  
+  .course-sidebar {
+    flex: 1;
+  }
+  
+  .sidebar-section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .sidebar-section h3 {
+    margin-top: 0;
+  }
+  
+  .sidebar-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-section button {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+  }
+  
+  .sidebar-section button:hover {
+    background-color: #c0392b;
+  }
+  
+  @media (max-width: 768px) {
+    .course-content {
+      flex-direction: column;
+    }
+  
+    .course-main {
+      margin-right: 0;
+    }
+  }
+  

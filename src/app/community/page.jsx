@@ -207,6 +207,7 @@ async function bookmark(id)
 <Image   className={styles.emoji} onClick={()=>{bookmark(issue._id)}} src="/bookmark.png" width={30} height={30}  alt='image'></Image>
 
 </div>
+
 <div className={styles.subsection5} >
 
 <p>{issue.likes.length}</p>

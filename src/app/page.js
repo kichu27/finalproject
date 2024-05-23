@@ -65,8 +65,6 @@ export default function Homepage() {
 <title>User Home</title>
 <meta name="google-site-verification" content={process.env.GOOGLE_VERIFICATION_ID} />
 
-
-
 <meta name="title" content="SKILLSAIL - Explore & Buy Exciting Courses" />
 <meta name="description" content="Discover a wide range of engaging courses and make purchases conveniently." />
 
@@ -82,9 +80,6 @@ export default function Homepage() {
 <meta property="twitter:title" content="SKILLSAIL - Explore & Buy Exciting Courses" />
 <meta property="twitter:description" content="Discover a wide range of engaging courses and make purchases conveniently." />
 <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
-
-
-
 
 </Head>
 

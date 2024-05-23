@@ -2,6 +2,9 @@
 const nextConfig = {
 
     transpilePackages: ['crypto-js'],
+    images: {
+        domains: ['res.cloudinary.com'],
+      },
 
 
 }

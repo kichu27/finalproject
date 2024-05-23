@@ -45,7 +45,7 @@ export default function VerifyEmailPage() {
   }, [token]);
 
   return (
-    <>
+    <div style={styles.main}>
       <Head>
         <title>Verify Email - Your Website Name</title>
         <meta
@@ -72,21 +72,34 @@ export default function VerifyEmailPage() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
 
 const styles = {
+
+  main : {
+  height: "100vh" , 
+  width : "100%" ,
+
+  
+  } ,
   container: {
     textAlign: "center",
     fontFamily: "Arial, sans-serif",
     backgroundColor: "#f2f2f2",
     padding: "20px",
-    borderRadius: "8px",
-    maxWidth: "400px",
+    borderRadius: "100px",
+    height: "400px",
     margin: "auto",
-    marginTop: "50px",
+    marginTop: "150px",
+    width : "1200px" , 
+    display : "flex" , 
+    "justify-content" : "center" , 
+    "align-items" : "center" , 
+    "flex-direction" : "column"
+    
   },
   heading: {
     color: "#333",

@@ -108,12 +108,14 @@ export default function Profilepage({ params }) {
                 <div className={s.cn}>  <h4>{c.courseName}</h4></div>
 
 
-                <p>{c.subDescription}</p>
+  
                 <hr />
                 <p>--- Istructor ---</p>
                 <p> {c.instructor} </p>
                 <p>--- Access The Course ---</p>
-<Link  href="/BoughtCourse">CLICK HERE  </Link>
+
+                <div className={ s.link }><Link className={ s.link2 }   href="/BoughtCourse"> CLICK HERE  </Link>
+</div>
 
 
               </div>

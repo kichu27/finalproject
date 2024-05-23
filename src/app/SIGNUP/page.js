@@ -5,9 +5,6 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from "next/link" ; 
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
 export default function Homepage() {
   const [User, setUser] = useState({ username: '', number: '', email: '', password: '' });
   const [passwordError, setPasswordError] = useState('');
@@ -47,12 +44,9 @@ export default function Homepage() {
       if (data.success) {
         setPasswordError('');
         setServerMessage(data.message);
-        const notify = () => toast(serverMessage);
-        notify()
         setevm(true)
       } else {
         setServerMessage(data.message);
-        notify()
 
       }
     } catch (error) {
@@ -133,7 +127,7 @@ export default function Homepage() {
     LOGIN
   </Link>
 </button> </div>
-<ToastContainer />
+
       
       </div>	
 

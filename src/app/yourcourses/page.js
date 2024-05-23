@@ -7,8 +7,8 @@ import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid';
 import sha256 from "crypto-js/sha256";
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-
+import 'react-toastify/dist/ReactToastify.css';
+import Head from 'next/head';
 
 import { useRouter } from "next/navigation";
 
@@ -144,6 +144,7 @@ router.push(redirect)
 
     
     <div className={s.maindivv} >
+
    
      <div className={s.hh}> <h1> CART </h1> <hr/>
      

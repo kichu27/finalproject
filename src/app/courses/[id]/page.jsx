@@ -11,12 +11,6 @@
   import { useInView } from "react-intersection-observer";
   
 
-  
-
-
-
-
-
   export default function CoursePage({ params }) {
 
     
@@ -31,7 +25,6 @@
   
     const [course, setCourse] = useState(null);
    
-
     
     async function getCourseInfo(id) {
       try {
@@ -98,6 +91,14 @@
         transition={{ duration: 0.5 }}
         ref={ref}
       >
+        <Head>
+        {course && (
+          <>
+            <title>{course.courseName} - Skill Sail</title>
+            <meta name="description" content={course.subDescription} />
+          </>
+        )}
+      </Head>
     
         <div className={cd.div2}>
           <Link href="/courses">

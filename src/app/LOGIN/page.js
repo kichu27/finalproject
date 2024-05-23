@@ -65,7 +65,7 @@ export default function Loginpage() {
       <div className={style.containerStyle}>
         <input
           type="text"
-          placeholder="Phone number, username, or email"
+          placeholder="Email"
           value={user.email}
           onChange={handlechange}
           name="email"

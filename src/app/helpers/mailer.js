@@ -215,7 +215,7 @@ var transport = nodemailer.createTransport({
             <div style="display: flex; flex-direction: column; align-items:center;">
           <p>Click
             
-              <a href="https://finalprojectgold.vercel.app/verifyemail?token=${hashedToken}">here</a>
+              <a href="https://finalproject-gold.vercel.app/verifyemail?token=${hashedToken}">here</a>
          
             to ${emailtype === 'VERIFY' ? 'verify your email' : 'reset your password'}
           </p>

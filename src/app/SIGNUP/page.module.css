@@ -8,13 +8,17 @@
     background-size: cover;
   }
   
-  .container {
+  .container1 {
 
-    padding: 20px;
+    padding: 30px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center; 
-
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: inherit;
   }
   
   .title {
@@ -90,6 +94,11 @@
 
 margin-top: 30px;
 display: flex;
-flex-direction: row;
+flex-direction: column;
     
+  }
+
+  .p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: grey;
   }

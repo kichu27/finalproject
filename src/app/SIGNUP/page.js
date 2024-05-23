@@ -55,8 +55,19 @@ export default function Homepage() {
   };
 
 
+  useEffect(()=>{
+
+    setTimeout(() => {
+  
+        setServerMessage("")
+        setPasswordError("")
+    }, 3000);
+
+
+  } , [passwordError , serverMessage ])
+
   return (
-    <div className={styles.body}>
+    <div>
 
 <Head>
        
@@ -75,7 +86,7 @@ export default function Homepage() {
     </Head>
       </Head>
 
-      <div className={styles.container}>
+      <div className={styles.container1}>
         <h1 className={styles.title}>SIGN UP</h1>
         <input
           className={styles.input}
@@ -113,7 +124,13 @@ export default function Homepage() {
         {serverMessage && <p className={styles.error}>{serverMessage}</p>}
         {evm && <p className={styles.error}>Check Email for Verification and Login!</p>}
 
-<div className={styles.divdiv}>   <button
+<div className={styles.divdiv}>  
+
+
+
+
+
+ <button
           className={buttonDisabled ? styles.buttonDisabled : styles.button}
           onClick={handleSubmit}
           disabled={buttonDisabled}
@@ -121,12 +138,14 @@ export default function Homepage() {
           {buttonDisabled ? 'NO SIGNUP' : 'SIGNUP'}
 
         </button>
-
+  <p className={styles.p}>Already Have an Account , Click Below</p>
         <button className={buttonDisabled ? styles.buttonDisabled : styles.button}>
   <Link className={styles.link} href="/LOGIN">
     LOGIN
   </Link>
-</button> </div>
+</button>
+
+         </div>
 
       
       </div>	

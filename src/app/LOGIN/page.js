@@ -1,17 +1,14 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
 import Link from "next/link"
 import style from "@/app/LOGIN/page.module.css"
 import Head from 'next/head';
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 export default function Loginpage() {
   
-  const notify = () => toast(" SUCCESSFULL LOGIN !");
 
   const [user, setuser] = useState({ email: '', password: '' });
   const [servermsg, setservermsg] = useState('');
@@ -26,6 +23,14 @@ export default function Loginpage() {
     }));
   }
 
+
+  useEffect(()=>{
+
+setTimeout(() => {
+  setservermsg("")
+}, 3000);
+
+  } , [servermsg])
   async function handlesubmit() {
     try {
       const response = await fetch('/api/users/login', {
@@ -38,7 +43,7 @@ export default function Loginpage() {
 
       const { status, message, token } = await response.json();
       setservermsg(message);
-      notify()
+   
       if (status === 200) {
         Cookies.set('token', token, { expires: 1 });
         router.push('/userhome');
@@ -54,11 +59,7 @@ export default function Loginpage() {
     <div className={style.container}>
       <Head>
 
-
   <meta name="google-site-verification" content="TgYVk9UwiLqATcJpCDeqVhzZr7QeJFoHX614xxDqlMs" />
-
-
-
 
       </Head>
       <h1 className={style.title}>LOG IN</h1>
@@ -84,6 +85,8 @@ export default function Loginpage() {
           <button onClick={handlesubmit} className={style.button}>
             LOGIN
           </button>
+
+          <p className={style.p}>Dont Have An Account , Click Below !</p>
           <button className={style.button}>
             <Link className={style.link} href="/SIGNUP">
               SIGNUP
@@ -91,7 +94,7 @@ export default function Loginpage() {
           </button>
         </div>
       </div>
-      <ToastContainer />
+    
     </div>
   );
 }

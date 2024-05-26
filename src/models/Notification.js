@@ -18,6 +18,7 @@
     },
     read: {
       type: Boolean,
+      
       default: false 
     },
     expiresAt: {
@@ -30,3 +31,4 @@
 
   export const Notification = mongoose.models.Notification || mongoose.model('Notification', notificationSchema)  ;
 
+    
